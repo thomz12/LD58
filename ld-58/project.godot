@@ -31,6 +31,7 @@ window/stretch/scale_mode="integer"
 
 [layer_names]
 
+2d_physics/layer_2="Rod Wall"
 2d_physics/layer_5="Rod"
 2d_physics/layer_6="Line"
 2d_physics/layer_7="Float"
