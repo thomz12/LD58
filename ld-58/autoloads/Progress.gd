@@ -1,10 +1,5 @@
 extends Node
 
-var fish_types := [
-	preload("res://resources/shark.tres"),
-	preload("res://resources/shrimp.tres"),
-	preload("res://resources/goldfish.tres")
-]
 var fish_scene := load("res://scenes/fishing/float_fish.tscn")
 
 var catch_history : Array[Fish] = []
@@ -17,7 +12,7 @@ func _ready() -> void:
 	## TODO: test data remove
 	for i in 10:
 		var fish := fish_scene.instantiate() as Fish
-		fish.data = load("res://resources/shark.tres")
+		fish.data = load("res://resources/fish_types/goldfish.tres")
 		add_child(fish)
 		catch_history.append(fish)
 
