@@ -18,6 +18,7 @@ var wait_unstuck  = 0.0
 
 var time_till_catch = 0.0
 var hooked = false
+var has_fake_out = false
 var time_hooked = 0.0
 
 func _ready() -> void:
@@ -59,6 +60,15 @@ func _process(delta: float) -> void:
 		if not hooked:
 			if time_till_catch > 0.0:
 				time_till_catch -= delta
+				
+				if time_till_catch < 2.0 and has_fake_out:
+					has_fake_out = false
+					var fx := fx_hooked_burst.instantiate() as CPUParticles2D
+					fx.emitting = true
+					fx.global_position = global_position
+					rod.add_sibling(fx)
+					
+				
 			else:
 				hooked = true
 				var fx := fx_hooked_burst.instantiate() as CPUParticles2D
@@ -85,6 +95,7 @@ func _on_body_entered(body):
 		wait_unstuck = 0.5
 		stuck = true
 		hooked = false
+		has_fake_out = randi_range(1, 8) == 1;
 		time_till_catch = randf_range(3.0, 8.0)
 		print("Casting!")
 
