@@ -1,4 +1,5 @@
 extends MarginContainer
+class_name MenuDex
 
 @onready var dex_entry: MarginContainer = %DexEntry
 @onready var label_index: Label = %LabelIndex
@@ -7,9 +8,18 @@ extends MarginContainer
 
 
 var fish_types : Array[FishType] = [
-	preload("res://resources/shark.tres"),
-	preload("res://resources/shrimp.tres"),
-	preload("res://resources/goldfish.tres"),
+	preload("res://resources/fish_types/eel.tres"),
+	preload("res://resources/fish_types/ray.tres"),
+	preload("res://resources/fish_types/idol.tres"),
+	preload("res://resources/fish_types/tuna.tres"),
+	preload("res://resources/fish_types/shark.tres"),
+	preload("res://resources/fish_types/clown.tres"),
+	preload("res://resources/fish_types/angler.tres"),
+	preload("res://resources/fish_types/shrimp.tres"),
+	preload("res://resources/fish_types/piranha.tres"),
+	preload("res://resources/fish_types/regular.tres"),
+	preload("res://resources/fish_types/goldfish.tres"),
+	preload("res://resources/fish_types/carvanha.tres"),
 ]
 var array_index := 0
 

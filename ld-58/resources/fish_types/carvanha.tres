@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://g780yb35soiv"]
 
-[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_type.gd" id="1_q6s42"]
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_q6s42"]
 [ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_vk00p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bubjg"]
