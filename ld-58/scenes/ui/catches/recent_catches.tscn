@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://xyeqnlsrx1sj"]
 
-[ext_resource type="PackedScene" uid="uid://dpl05o4unfcjs" path="res://scenes/ui/catch.tscn" id="1_8ya4n"]
+[ext_resource type="PackedScene" uid="uid://dpl05o4unfcjs" path="res://scenes/ui/catches/catch.tscn" id="1_8ya4n"]
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_l5yjr"]
 
 [node name="RecentCatches" type="MarginContainer"]
