@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://x580wdbrupe7"]
+
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_type.gd" id="1_kcyxo"]
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_w3ykj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bubjg"]
+atlas = ExtResource("2_w3ykj")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_kcyxo")
+identifier = "Clown Fish"
+sprite = SubResource("AtlasTexture_bubjg")
+catch_base_value = 200
+catch_range = Vector2(20, 40)
+base_length = 5.0
+base_weight = 5.0
+metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

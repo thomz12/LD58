@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://g780yb35soiv"]
+
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_type.gd" id="1_q6s42"]
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_vk00p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bubjg"]
+atlas = ExtResource("2_vk00p")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_q6s42")
+identifier = "Carvanha"
+sprite = SubResource("AtlasTexture_bubjg")
+metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://jfkcn8ht3e4f"]
+
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_type.gd" id="1_s4qnb"]
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_jcan3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bubjg"]
+atlas = ExtResource("2_jcan3")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_s4qnb")
+identifier = "Idol"
+sprite = SubResource("AtlasTexture_bubjg")
+metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
