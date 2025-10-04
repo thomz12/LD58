@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqiii1wj0wsya"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmc4n"]
+radius = 1.0
+height = 10.0
+
+[node name="Line" type="RigidBody2D"]
+collision_layer = 32
+mass = 0.01
+can_sleep = false
+linear_damp = 0.2
+angular_damp = 0.2
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_hmc4n")
+
+[node name="Anchor" type="Node2D" parent="."]
+position = Vector2(0, 10)

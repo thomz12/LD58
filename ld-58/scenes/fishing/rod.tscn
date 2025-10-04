@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxdp0ygjeeag3"]
+
+[ext_resource type="Script" uid="uid://c8wtm7rdwttru" path="res://scripts/rod.gd" id="1_vf8jx"]
+[ext_resource type="Texture2D" uid="uid://bbbdy20qbnvfl" path="res://sprites/rod.png" id="2_vf8jx"]
+[ext_resource type="Script" uid="uid://b4tk0dyosq6tv" path="res://scripts/line_root.gd" id="3_ch35b"]
+[ext_resource type="Script" uid="uid://ccbgxprgug2dr" path="res://scripts/fishing_line.gd" id="4_erixr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wfyh"]
+radius = 2.0
+height = 20.0
+
+[node name="Rod" type="RigidBody2D"]
+collision_layer = 16
+mass = 2.0
+gravity_scale = 0.0
+can_sleep = false
+linear_damp = 5.0
+script = ExtResource("1_vf8jx")
+spring_strength = 300.0
+
+[node name="RodSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("2_vf8jx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_0wfyh")
+
+[node name="LineRoot" type="Node2D" parent="."]
+position = Vector2(0, -14)
+script = ExtResource("3_ch35b")
+segments = 11
+
+[node name="FishingLine" type="Line2D" parent="." node_paths=PackedStringArray("line_root")]
+width = 1.0
+default_color = Color(0, 0, 0, 1)
+script = ExtResource("4_erixr")
+line_root = NodePath("../LineRoot")
