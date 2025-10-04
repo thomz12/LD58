@@ -27,6 +27,7 @@ func _ready() -> void:
 		next_segment = segment.find_child("Anchor")
 
 	var float_inst = float_scene.instantiate() as RigidBody2D
+	float_inst.rod = get_parent()
 	next_segment.add_child(float_inst)
 
 	var float_joint := PinJoint2D.new()

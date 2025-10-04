@@ -5,7 +5,7 @@ class_name Float
 var stuck := false
 var over_ground = false
 var cast = false
-
+var rod : RigidBody2D
 var initial_mass = 0.3
 
 var wait_unstuck  = 0.0
@@ -16,13 +16,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if stuck:
-		print(linear_velocity.length())
+		#print(linear_velocity.normalized())
 		if linear_velocity.length() > 0.003 and wait_unstuck < 0.0:
 			stuck = false
 			mass = initial_mass
 			Events.float_return.emit()
 
 			var fish = Spawner.get_fish()
+			fish.launch_vector = rod.linear_velocity.normalized()
 			add_child(fish)
 			Events.fish_caught.emit(fish.data)
 

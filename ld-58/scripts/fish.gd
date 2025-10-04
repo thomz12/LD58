@@ -5,15 +5,16 @@ class_name Fish
 
 @export var data : FishType
 
+var launch_vector := Vector2.ZERO
+var launch_force := 600
 
 func _ready() -> void:
-	
-	apply_impulse.call_deferred(Vector2(-150, -400))
+	apply_impulse.call_deferred(launch_vector * launch_force)
 	apply_torque_impulse.call_deferred(100)
-	
+
 	assert(data, 'Fish without an identity. No data was set.')
 	sprite_2d.texture = data.sprite
-	
+
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 0, 1.0).set_delay(3.0)
 	tween.tween_callback(func():
