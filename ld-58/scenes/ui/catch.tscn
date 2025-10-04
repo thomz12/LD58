@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpl05o4unfcjs"]
+
+[ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_6q86n"]
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="1_8p5lo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q86n"]
+atlas = ExtResource("1_8p5lo")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Catch" type="MarginContainer"]
+offset_right = 242.0
+offset_bottom = 32.0
+theme = ExtResource("1_6q86n")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_6q86n")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelName" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "<fish name>"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelLength" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Length: 10.00m |"
+
+[node name="LabelWeight" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Weight: 10.00kg"
