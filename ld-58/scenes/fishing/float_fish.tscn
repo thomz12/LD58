@@ -24,6 +24,3 @@ shape = SubResource("RectangleShape2D_1dmvg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-6, 0)
 texture = SubResource("AtlasTexture_v5v7g")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="."]
-node_b = NodePath("..")
