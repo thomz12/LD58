@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgjyxgqyuigc1"]
+[gd_scene load_steps=9 format=3 uid="uid://bgjyxgqyuigc1"]
 
 [ext_resource type="PackedScene" uid="uid://cxdp0ygjeeag3" path="res://scenes/fishing/rod.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://dlipgeh8lptfa" path="res://sprites/ground.png" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bh30bgc4emjgm" path="res://sprites/water.png" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://bvbvc15cva7lv" path="res://scripts/float_area.gd" id="5_tbgi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
+size = Vector2(20, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(456, 20)
@@ -15,6 +18,24 @@ size = Vector2(16, 16)
 size = Vector2(405.5, 188.5)
 
 [node name="Main" type="Node2D"]
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(-10, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D"]
+position = Vector2(0, 92)
+shape = SubResource("RectangleShape2D_tefeu")
+debug_color = Color(0.96581644, 0, 0.48731834, 0.41960785)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(331, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2"]
+position = Vector2(0, 92)
+shape = SubResource("RectangleShape2D_tefeu")
+debug_color = Color(0.96581644, 0, 0.48731834, 0.41960785)
 
 [node name="Rod" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(207, -93)
@@ -80,15 +101,3 @@ script = ExtResource("5_tbgi4")
 [node name="Shape" type="CollisionShape2D" parent="GroundArea2"]
 position = Vector2(-0.5, 82.5)
 shape = SubResource("RectangleShape2D_tbgi4")
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(283.00003, 139)
-rotation = -0.76096356
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
-polygon = PackedVector2Array(40.102997, -8.76062, 27.897156, 12.757233, -13.102783, 13.759247, -12.93145, -8.171783, -16, -8, -16, 16, 30.793854, 15.515717, 44.344376, -8.864258)
-
-[node name="Polygon2D" type="Polygon2D" parent="Node2D"]
-polygon = PackedVector2Array(40.102997, -8.76062, 44.344376, -8.864258, 30.793854, 15.515717, -16, 16, -16, -8, -12.93145, -8.171783, -13.102783, 13.759247, 27.897156, 12.757233)
