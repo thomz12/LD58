@@ -54,10 +54,10 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if stuck:
 		time_till_catch -= delta
-		
+
 		if time_till_catch < 0.0:
 			scale = Vector2(2.0, 2.0)
-	
+
 
 func _on_body_entered(body):
 	if body.has_meta("is_water") and body.get_meta("is_water") and not stuck:

@@ -80,3 +80,15 @@ script = ExtResource("5_tbgi4")
 [node name="Shape" type="CollisionShape2D" parent="GroundArea2"]
 position = Vector2(-0.5, 82.5)
 shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(283.00003, 139)
+rotation = -0.76096356
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
+polygon = PackedVector2Array(40.102997, -8.76062, 27.897156, 12.757233, -13.102783, 13.759247, -12.93145, -8.171783, -16, -8, -16, 16, 30.793854, 15.515717, 44.344376, -8.864258)
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D"]
+polygon = PackedVector2Array(40.102997, -8.76062, 44.344376, -8.864258, 30.793854, 15.515717, -16, 16, -16, -8, -12.93145, -8.171783, -13.102783, 13.759247, 27.897156, 12.757233)
