@@ -14,6 +14,10 @@ func _physics_process(_delta: float) -> void:
 			stuck = false
 			mass = initial_mass
 			Events.float_return.emit()
+			var fish = load("res://scenes/fishing/float_fish.tscn").instantiate() as Fish
+			fish.data = load("res://resources/clown.tres")
+			add_child(fish)
+			
 	
 func _on_body_entered(body):
 	if body.has_meta("is_water") and body.get_meta("is_water"):

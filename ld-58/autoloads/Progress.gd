@@ -5,7 +5,7 @@ var fish_types := [
 	preload("res://resources/shrimp.tres"),
 	preload("res://resources/goldfish.tres")
 ]
-var fish_scene := load("res://scenes/fish.tscn")
+var fish_scene := load("res://scenes/fishing/float_fish.tscn")
 
 var catch_history : Array[Fish] = []
 

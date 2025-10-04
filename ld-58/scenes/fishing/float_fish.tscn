@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://djryjo35jvers"]
+
+[ext_resource type="Texture2D" uid="uid://25ul6ax6i6u7" path="res://assets/fish.png" id="1_47nsk"]
+[ext_resource type="Script" uid="uid://c1ke7f4hcpuep" path="res://scripts/fish.gd" id="1_s5nsp"]
+[ext_resource type="Resource" uid="uid://3nkror7g42v5" path="res://resources/tuna.tres" id="2_x7boq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dmvg"]
+size = Vector2(13, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5v7g"]
+atlas = ExtResource("1_47nsk")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Fish" type="RigidBody2D"]
+collision_layer = 256
+mass = 0.1
+script = ExtResource("1_s5nsp")
+data = ExtResource("2_x7boq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_1dmvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, 0)
+texture = SubResource("AtlasTexture_v5v7g")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_b = NodePath("..")

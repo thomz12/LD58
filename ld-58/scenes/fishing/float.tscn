@@ -20,5 +20,5 @@ script = ExtResource("1_htrjv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3ildr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="FloatSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_yanru")
