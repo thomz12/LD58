@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0ls6lg87u5jo"]
+[gd_scene load_steps=4 format=3 uid="uid://c0ls6lg87u5jo"]
 
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_vcnf4"]
+[ext_resource type="Script" uid="uid://bnqbaajnvxkyp" path="res://scripts/ui/menu_dex.gd" id="2_at4cu"]
 [ext_resource type="PackedScene" uid="uid://d0sbjseg4fdwd" path="res://scenes/ui/dex/dex_entry.tscn" id="2_fx4rj"]
 
 [node name="Dex" type="MarginContainer"]
@@ -11,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_vcnf4")
 theme_override_constants/margin_top = 4
+script = ExtResource("2_at4cu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -29,7 +31,8 @@ theme_override_font_sizes/font_size = 32
 text = "Fish-e-dex"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/TitleContainer/VBoxContainer"]
+[node name="LabelIndex" type="Label" parent="VBoxContainer/TitleContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "11/12"
 horizontal_alignment = 1
@@ -43,17 +46,53 @@ layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="ButtonPrevious" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="ButtonPrevious" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/Spacer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -10.5
+offset_right = 7.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "<"
 
 [node name="DexEntry" parent="VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_fx4rj")]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="ButtonNext" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Spacer2" type="Control" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="ButtonNext" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/Spacer2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -10.5
+offset_right = 7.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = ">"
@@ -68,3 +107,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Return"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/Spacer/ButtonPrevious" to="." method="_on_button_previous_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/Spacer2/ButtonNext" to="." method="_on_button_next_pressed"]
