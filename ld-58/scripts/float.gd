@@ -29,7 +29,8 @@ func _physics_process(delta: float) -> void:
 			Events.float_return.emit()
 
 			var fish = Spawner.get_fish()
-			fish.launch_vector = rod.linear_velocity.normalized()
+			#fish.global_position.direction_to(rod)
+			fish.launch_vector = global_position.direction_to(rod.global_position)
 			add_child(fish)
 			Events.fish_caught.emit(fish.data)
 
