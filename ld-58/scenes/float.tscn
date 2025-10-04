@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxspj8eaie4w0"]
+
+[ext_resource type="Texture2D" uid="uid://c8tx0va65qm2t" path="res://sprites/float.png" id="1_bkiqr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ildr"]
+radius = 4.0
+
+[node name="Float" type="RigidBody2D"]
+collision_layer = 64
+mass = 0.05
+linear_damp = 0.1
+angular_damp = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3ildr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bkiqr")

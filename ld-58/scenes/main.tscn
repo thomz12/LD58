@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgjyxgqyuigc1"]
+[gd_scene load_steps=3 format=3 uid="uid://bgjyxgqyuigc1"]
 
 [ext_resource type="PackedScene" uid="uid://cxdp0ygjeeag3" path="res://scenes/rod.tscn" id="1_o5qli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
+size = Vector2(339, 20)
 
 [node name="Main" type="Node2D"]
 
 [node name="Rod" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(162, 174)
+shape = SubResource("RectangleShape2D_o5qli")
