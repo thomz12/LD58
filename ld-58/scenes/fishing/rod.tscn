@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wfyh"]
 radius = 2.0
-height = 20.0
+height = 28.0
 
 [node name="Rod" type="RigidBody2D"]
 collision_layer = 16
@@ -19,16 +19,15 @@ linear_damp = 5.0
 script = ExtResource("1_vf8jx")
 spring_strength = 300.0
 
-[node name="RodSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -7)
-texture = ExtResource("2_vf8jx")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_0wfyh")
 
+[node name="RodSprite" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("2_vf8jx")
+
 [node name="LineRoot" type="Node2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -24)
 script = ExtResource("3_ch35b")
 segments = 8
 
