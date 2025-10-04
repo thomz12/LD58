@@ -102,5 +102,10 @@ func _on_body_entered(body):
 		## AUDIO STUFF
 		audio_stream_player_2d.stream = sfx_hit_water
 		audio_stream_player_2d.play()
+		
+		var fx := fx_hooked_burst.instantiate() as CPUParticles2D
+		fx.emitting = true
+		fx.global_position = global_position
+		rod.add_sibling(fx)
 
 		Events.float_cast.emit()
