@@ -21,6 +21,8 @@ var hooked = false
 var has_fake_out = false
 var time_hooked = 0.0
 
+var hooked_total_time = 0.0
+
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	initial_mass = mass
@@ -84,6 +86,11 @@ func _process(delta: float) -> void:
 				hooked = false
 				time_hooked = 0.0
 				time_till_catch = randf_range(2.0, 4.0)
+	
+		hooked_total_time += delta
+		var float_sprite = find_child("FloatSprite") as Sprite2D
+		float_sprite.offset = Vector2(0, 2).rotated(-float_sprite.global_rotation) * sin(hooked_total_time * 4)
+	
 
 
 func _on_body_entered(body):
@@ -95,6 +102,7 @@ func _on_body_entered(body):
 		wait_unstuck = 0.5
 		stuck = true
 		hooked = false
+		hooked_total_time = 0.0
 		has_fake_out = randi_range(1, 8) == 1;
 		time_till_catch = randf_range(3.0, 8.0)
 		print("Casting!")
