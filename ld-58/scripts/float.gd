@@ -32,17 +32,17 @@ func _physics_process(delta: float) -> void:
 			time_hooked = 0.0
 			Events.float_return.emit()
 
+			var fx := fx_water_burst.instantiate() as CPUParticles2D
+			fx.emitting = true
+			fx.global_position = global_position
+			rod.add_sibling(fx)
+
 			if hooked:
 				var fish = Spawner.get_fish()
 				fish.launch_vector = global_position.direction_to(rod.global_position)
 				fish.launch_distance = global_position.distance_to(rod.global_position)
 				add_child(fish)
 				Events.fish_caught.emit(fish.data)
-
-				var fx := fx_water_burst.instantiate() as CPUParticles2D
-				fx.emitting = true
-				fx.global_position = global_position
-				rod.add_sibling(fx)
 
 				## AUDIO STUFF
 				audio_stream_player_2d.stream = sfx_come_up
