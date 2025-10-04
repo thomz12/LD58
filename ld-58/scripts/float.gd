@@ -10,11 +10,12 @@ var fx_water_burst := load("res://resources/particles/water_burst.tscn")
 
 var stuck := false
 var over_ground = false
-var cast = false
 var rod : RigidBody2D
 var initial_mass = 0.3
 
 var wait_unstuck  = 0.0
+
+var time_till_catch = 0.0
 
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
@@ -50,20 +51,23 @@ func _physics_process(delta: float) -> void:
 			linear_velocity = Vector2()
 			angular_velocity = 0
 
-func _process(_delta: float) -> void:
-	if cast and over_ground:
-		cast = false
-
+func _process(delta: float) -> void:
+	if stuck:
+		time_till_catch -= delta
+		
+		if time_till_catch < 0.0:
+			scale = Vector2(2.0, 2.0)
+	
 
 func _on_body_entered(body):
-	if body.has_meta("is_water") and body.get_meta("is_water") and not cast:
+	if body.has_meta("is_water") and body.get_meta("is_water") and not stuck:
 		mass = 1000
 		linear_velocity = Vector2()
 		angular_velocity = 0
 
 		wait_unstuck = 0.5
 		stuck = true
-		cast = true
+		time_till_catch = 3.0
 		print("Casting!")
 
 		## AUDIO STUFF
