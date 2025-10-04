@@ -21,30 +21,29 @@ func _physics_process(delta: float) -> void:
 			stuck = false
 			mass = initial_mass
 			Events.float_return.emit()
-			
-			var fish = load("res://scenes/fishing/float_fish.tscn").instantiate() as Fish
-			fish.data = load("res://resources/fish_types/angler.tres")
+
+			var fish = Spawner.get_fish()
 			add_child(fish)
 			Events.fish_caught.emit(fish.data)
-			
+
 			# TODO doesn't work:
 			apply_impulse.call_deferred(Vector2(-100, -300))
 		else:
 			wait_unstuck -= delta
 			linear_velocity = Vector2()
 			angular_velocity = 0
-			
+
 func _process(_delta: float) -> void:
 	if cast and over_ground:
 		cast = false
-		
-	
+
+
 func _on_body_entered(body):
 	if body.has_meta("is_water") and body.get_meta("is_water") and not cast:
 		mass = 1000
 		linear_velocity = Vector2()
 		angular_velocity = 0
-		
+
 		wait_unstuck = 0.5
 		stuck = true
 		cast = true
