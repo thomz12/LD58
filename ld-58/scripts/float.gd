@@ -16,6 +16,8 @@ var initial_mass = 0.3
 var wait_unstuck  = 0.0
 
 var time_till_catch = 0.0
+var hooked = false
+var time_hooked = 0.0
 
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
@@ -27,36 +29,46 @@ func _physics_process(delta: float) -> void:
 		if linear_velocity.length() > 0.003 and wait_unstuck < 0.0:
 			stuck = false
 			mass = initial_mass
+			time_hooked = 0.0
 			Events.float_return.emit()
 
-			var fish = Spawner.get_fish()
-			fish.launch_vector = global_position.direction_to(rod.global_position)
-			fish.launch_distance = global_position.distance_to(rod.global_position)
-			add_child(fish)
-			Events.fish_caught.emit(fish.data)
+			if hooked:
+				var fish = Spawner.get_fish()
+				fish.launch_vector = global_position.direction_to(rod.global_position)
+				fish.launch_distance = global_position.distance_to(rod.global_position)
+				add_child(fish)
+				Events.fish_caught.emit(fish.data)
 
-			var fx := fx_water_burst.instantiate() as CPUParticles2D
-			fx.emitting = true
-			fx.global_position = global_position
-			rod.add_sibling(fx)
+				var fx := fx_water_burst.instantiate() as CPUParticles2D
+				fx.emitting = true
+				fx.global_position = global_position
+				rod.add_sibling(fx)
 
-			## AUDIO STUFF
-			audio_stream_player_2d.stream = sfx_come_up
-			audio_stream_player_2d.play()
-
-			# TODO doesn't work:
-			apply_impulse.call_deferred(Vector2(-100, -300))
+				## AUDIO STUFF
+				audio_stream_player_2d.stream = sfx_come_up
+				audio_stream_player_2d.play()
+				
 		else:
 			wait_unstuck -= delta
 			linear_velocity = Vector2()
 			angular_velocity = 0
 
 func _process(delta: float) -> void:
-	if stuck:
-		time_till_catch -= delta
-
-		if time_till_catch < 0.0:
-			scale = Vector2(2.0, 2.0)
+	if stuck :
+		if not hooked:
+			if time_till_catch > 0.0:
+				time_till_catch -= delta
+			else:
+				hooked = true
+				print("Bite!")
+		else:
+			scale = Vector2(2, 2)
+			time_hooked += delta
+			
+			if time_hooked > 1.0:
+				hooked = false
+				time_hooked = 0.0
+				time_till_catch = randf_range(2.0, 4.0)
 
 
 func _on_body_entered(body):
@@ -67,7 +79,8 @@ func _on_body_entered(body):
 
 		wait_unstuck = 0.5
 		stuck = true
-		time_till_catch = 3.0
+		hooked = false
+		time_till_catch = randf_range(3.0, 8.0)
 		print("Casting!")
 
 		## AUDIO STUFF
