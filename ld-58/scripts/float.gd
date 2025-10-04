@@ -7,6 +7,7 @@ class_name Float
 var sfx_come_up := load("res://audio/fx_float_comes_up.wav")
 var sfx_hit_water := load("res://audio/fx_float_hits_water.wav")
 var fx_water_burst := load("res://resources/particles/water_burst.tscn")
+var fx_hooked_burst := load("res://resources/particles/hooked_burst.tscn")
 
 var stuck := false
 var over_ground = false
@@ -60,6 +61,10 @@ func _process(delta: float) -> void:
 				time_till_catch -= delta
 			else:
 				hooked = true
+				var fx := fx_hooked_burst.instantiate() as CPUParticles2D
+				fx.emitting = true
+				fx.global_position = global_position
+				rod.add_sibling(fx)
 				print("Bite!")
 		else:
 			scale = Vector2(2, 2)
