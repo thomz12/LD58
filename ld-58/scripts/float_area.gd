@@ -6,7 +6,6 @@ func _ready() -> void:
 			if body is Float:
 				body = body as Float
 				body.over_ground = true
-				print("Entered")
 	)
 	
 	connect("body_exited", 
@@ -14,5 +13,4 @@ func _ready() -> void:
 			if body is Float:
 				body = body as Float
 				body.over_ground = false
-				print("Exit")
 	)
