@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://25ul6ax6i6u7" path="res://assets/fish.png" id="1_47nsk"]
 [ext_resource type="Script" uid="uid://c1ke7f4hcpuep" path="res://scripts/fish.gd" id="1_s5nsp"]
-[ext_resource type="Resource" path="res://resources/tuna.tres" id="2_x7boq"]
+[ext_resource type="Resource" uid="uid://3nkror7g42v5" path="res://resources/fish_types/tuna.tres" id="2_x7boq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dmvg"]
 size = Vector2(13, 12)
