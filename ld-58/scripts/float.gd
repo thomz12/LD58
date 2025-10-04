@@ -2,6 +2,11 @@ extends RigidBody2D
 
 class_name Float
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+var sfx_hit_water := load("res://audio/fx_float_hits_water.wav")
+var sfx_come_up := load("res://audio/fx_float_comes_up.wav")
+
 var stuck := false
 var over_ground = false
 var cast = false
@@ -27,6 +32,10 @@ func _physics_process(delta: float) -> void:
 			add_child(fish)
 			Events.fish_caught.emit(fish.data)
 
+			## AUDIO STUFF
+			audio_stream_player_2d.stream = sfx_come_up
+			audio_stream_player_2d.play()
+
 			# TODO doesn't work:
 			apply_impulse.call_deferred(Vector2(-100, -300))
 		else:
@@ -49,4 +58,9 @@ func _on_body_entered(body):
 		stuck = true
 		cast = true
 		print("Casting!")
+
+		## AUDIO STUFF
+		audio_stream_player_2d.stream = sfx_hit_water
+		audio_stream_player_2d.play()
+
 		Events.float_cast.emit()
