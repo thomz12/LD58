@@ -2,7 +2,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmc4n"]
 radius = 1.0
-height = 10.0
+height = 6.0
 
 [node name="Line" type="RigidBody2D"]
 collision_layer = 32
@@ -12,8 +12,8 @@ linear_damp = 0.2
 angular_damp = 0.2
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_hmc4n")
 
 [node name="Anchor" type="Node2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(0, 6)

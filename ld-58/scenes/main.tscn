@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bqhlak50x0uy3" path="res://scenes/camera.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://duerps3ssb2mj" path="res://scripts/camera.gd" id="4_jyhfs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
-size = Vector2(2899.25, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(456, 20)
 
 [node name="Main" type="Node2D"]
 
@@ -22,10 +22,6 @@ position = Vector2(207, -93)
 
 [node name="Background" type="StaticBody2D" parent="."]
 
-[node name="Water" type="CollisionShape2D" parent="Background"]
-position = Vector2(823, 188)
-shape = SubResource("RectangleShape2D_o5qli")
-
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 position = Vector2(0, 175)
 scale = Vector2(25.44, 1)
@@ -35,3 +31,12 @@ texture = ExtResource("2_0wfyh")
 position = Vector2(0, 175)
 scale = Vector2(25.44, 1)
 shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="Water" type="StaticBody2D" parent="."]
+position = Vector2(206, 183)
+collision_layer = 128
+metadata/is_water = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(214, 1)
+shape = SubResource("RectangleShape2D_jyhfs")

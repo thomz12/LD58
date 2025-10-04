@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8rs5crkngrgy"]
+
+[ext_resource type="Script" uid="uid://bmk8ahjal1tic" path="res://scripts/float_holder.gd" id="1_bj0s3"]
+
+[node name="FloatHolder" type="DampedSpringJoint2D"]
+script = ExtResource("1_bj0s3")

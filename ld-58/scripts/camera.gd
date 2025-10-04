@@ -11,7 +11,6 @@ func _ready() -> void:
 	Events.add_camera_target.connect(
 		func(target: Node2D):
 			targets.append(target)
-			print("hallo")
 	)
 
 func _process(_delta: float) -> void:
