@@ -13,3 +13,9 @@ func _ready() -> void:
 	
 	assert(data, 'Fish without an identity. No data was set.')
 	sprite_2d.texture = data.sprite
+	
+	var tween := create_tween()
+	tween.tween_property(self, "modulate:a", 0, 1.0).set_delay(3.0)
+	tween.tween_callback(func():
+		queue_free()
+	)

@@ -8,13 +8,16 @@ var cast = false
 
 var initial_mass = 0.3
 
+var wait_unstuck  = 0.0
+
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	initial_mass = mass
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if stuck:
-		if linear_velocity.length() > 0.15:
+		print(linear_velocity.length())
+		if linear_velocity.length() > 0.003 and wait_unstuck < 0.0:
 			stuck = false
 			mass = initial_mass
 			Events.float_return.emit()
@@ -24,16 +27,25 @@ func _physics_process(_delta: float) -> void:
 			add_child(fish)
 			Events.fish_caught.emit(fish.data)
 			
-func _process(delta: float) -> void:
+			# TODO doesn't work:
+			apply_impulse.call_deferred(Vector2(-100, -300))
+		else:
+			wait_unstuck -= delta
+			linear_velocity = Vector2()
+			angular_velocity = 0
+			
+func _process(_delta: float) -> void:
 	if cast and over_ground:
 		cast = false
 		
 	
 func _on_body_entered(body):
 	if body.has_meta("is_water") and body.get_meta("is_water") and not cast:
+		mass = 1000
 		linear_velocity = Vector2()
 		angular_velocity = 0
-		mass = 1000
+		
+		wait_unstuck = 0.5
 		stuck = true
 		cast = true
 		print("Casting!")
