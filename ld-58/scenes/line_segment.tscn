@@ -7,8 +7,9 @@ height = 10.0
 [node name="Line" type="RigidBody2D"]
 collision_layer = 32
 mass = 0.05
-linear_damp = 0.1
-angular_damp = 0.1
+gravity_scale = 0.0
+linear_damp = 0.2
+angular_damp = 0.2
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)

@@ -23,11 +23,11 @@ func _physics_process(_delta: float) -> void:
 	apply_force(total_force)
 	
 	# Lock angle
-	var angle = rotation
-	if angle < MIN_ANGLE:
-		angle = MIN_ANGLE
-		angular_velocity = 0
-	elif angle > MAX_ANGLE:
-		angle = MAX_ANGLE
-		angular_velocity = 0
-	transform = Transform2D(angle, transform.origin)
+	#var angle = rotation
+	#if angle < MIN_ANGLE:
+		#angle = MIN_ANGLE
+		#angular_velocity = 0
+	#elif angle > MAX_ANGLE:
+		#angle = MAX_ANGLE
+		#angular_velocity = 0
+	#transform = Transform2D(angle, transform.origin)
