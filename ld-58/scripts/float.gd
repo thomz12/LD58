@@ -15,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 			mass = initial_mass
 			Events.float_return.emit()
 			var fish = load("res://scenes/fishing/float_fish.tscn").instantiate() as Fish
-			fish.data = load("res://resources/clown.tres")
+			fish.data = load("res://resources/fish_types/angler.tres")
 			add_child(fish)
 			
 	
