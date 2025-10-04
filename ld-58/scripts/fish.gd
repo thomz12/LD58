@@ -6,10 +6,11 @@ class_name Fish
 @export var data : FishType
 
 var launch_vector := Vector2.ZERO
-var launch_force := 600
+var launch_distance := 0.0
+var launch_force := 7.5
 
 func _ready() -> void:
-	apply_impulse.call_deferred(launch_vector * launch_force)
+	apply_impulse.call_deferred(launch_vector * (launch_force * launch_distance))
 	apply_torque_impulse.call_deferred(100)
 
 	assert(data, 'Fish without an identity. No data was set.')
