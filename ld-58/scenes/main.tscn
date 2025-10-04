@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgjyxgqyuigc1"]
+[gd_scene load_steps=10 format=3 uid="uid://bgjyxgqyuigc1"]
 
 [ext_resource type="PackedScene" uid="uid://cxdp0ygjeeag3" path="res://scenes/fishing/rod.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dlipgeh8lptfa" path="res://sprites/ground.png" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bh30bgc4emjgm" path="res://sprites/water.png" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://bvbvc15cva7lv" path="res://scripts/float_area.gd" id="5_tbgi4"]
@@ -18,6 +19,12 @@ size = Vector2(16, 16)
 size = Vector2(405.5, 188.5)
 
 [node name="Main" type="Node2D"]
+
+[node name="Background1" type="Sprite2D" parent="."]
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(171, 131)
+texture = ExtResource("1_tbgi4")
 
 [node name="Boundaries" type="Node2D" parent="."]
 
@@ -56,28 +63,28 @@ texture = ExtResource("3_jyhfs")
 region_enabled = true
 region_rect = Rect2(0, 0, 344, 16)
 
-[node name="Background" type="StaticBody2D" parent="."]
+[node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(-155, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
 position = Vector2(0, 175)
 scale = Vector2(25.44, 1)
 texture = ExtResource("2_0wfyh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(0, 175)
 scale = Vector2(25.44, 1)
 shape = SubResource("RectangleShape2D_sugp2")
 
-[node name="Background2" type="StaticBody2D" parent="."]
+[node name="Platform2" type="StaticBody2D" parent="."]
 position = Vector2(467, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background2"]
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
 position = Vector2(0, 175)
 scale = Vector2(25.44, 1)
 texture = ExtResource("2_0wfyh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
 position = Vector2(0, 175)
 scale = Vector2(25.44, 1)
 shape = SubResource("RectangleShape2D_sugp2")
