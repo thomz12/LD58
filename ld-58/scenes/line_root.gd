@@ -21,6 +21,7 @@ func _ready() -> void:
 		next_segment.add_child(joint)
 		joint.node_a = parent_body.get_path()
 		joint.node_b = segment.get_path()
+		joint.softness = 10
 		
 		parent_body = segment
 		next_segment = segment.find_child("Anchor")
