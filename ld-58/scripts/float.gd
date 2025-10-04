@@ -1,6 +1,10 @@
 extends RigidBody2D
 
+class_name Float
+
 var stuck := false
+var over_ground = false
+
 var initial_mass = 0.3
 
 func _ready() -> void:

@@ -37,6 +37,7 @@ window/stretch/scale_mode="integer"
 2d_physics/layer_7="Float"
 2d_physics/layer_8="Water"
 2d_physics/layer_9="Fish"
+2d_physics/layer_10="AboveGround"
 
 [physics]
 
