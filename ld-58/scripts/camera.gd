@@ -7,6 +7,12 @@ var targets: Array[Node2D];
 func _ready() -> void:
 	position_smoothing_enabled = true
 	position_smoothing_speed = 3
+	
+	Events.add_camera_target.connect(
+		func(target: Node2D):
+			targets.append(target)
+			print("hallo")
+	)
 
 func _process(_delta: float) -> void:
 	

@@ -29,7 +29,7 @@ shape = SubResource("CapsuleShape2D_0wfyh")
 [node name="LineRoot" type="Node2D" parent="."]
 position = Vector2(0, -14)
 script = ExtResource("3_ch35b")
-segments = 11
+segments = 6
 
 [node name="FishingLine" type="Line2D" parent="." node_paths=PackedStringArray("line_root")]
 width = 1.0

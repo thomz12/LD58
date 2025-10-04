@@ -1,5 +1,3 @@
 extends Node
 
-
-signal rod_spawned(rod: Rod)
-signal dobber_spawned
+signal add_camera_target(target: Node2D)

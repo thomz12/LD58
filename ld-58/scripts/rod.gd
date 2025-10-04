@@ -1,15 +1,10 @@
 extends RigidBody2D
-class_name Rod
 
 @export var spring_strength: float = 800.0
 @export var damping: float = 50.0
 
 func _ready() -> void:
-	Events.rod_spawned.emit()
-
-	#Events.rod_spawned.connect(
-		#func(rod: Rod) : targets.append(rod)
-	#)
+	Events.add_camera_target.emit(self)
 
 func _physics_process(_delta: float) -> void:
 	var target = get_global_mouse_position()

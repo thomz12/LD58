@@ -35,3 +35,5 @@ func _ready() -> void:
 	float_joint.node_a = float_inst.get_path()
 	float_joint.node_b = parent_body.get_path()
 	
+	Events.add_camera_target.emit(float_inst)
+	

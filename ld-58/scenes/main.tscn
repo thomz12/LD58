@@ -13,6 +13,10 @@ size = Vector2(16, 16)
 
 [node name="Main" type="Node2D"]
 
+[node name="Camera" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(160, 90)
+script = ExtResource("4_jyhfs")
+
 [node name="Rod" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(207, -93)
 
@@ -31,8 +35,3 @@ texture = ExtResource("2_0wfyh")
 position = Vector2(0, 175)
 scale = Vector2(25.44, 1)
 shape = SubResource("RectangleShape2D_sugp2")
-
-[node name="Camera" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("3_sugp2")]
-position = Vector2(160, 90)
-script = ExtResource("4_jyhfs")
-targets = [NodePath("../Rod")]
