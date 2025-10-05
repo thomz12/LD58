@@ -28,6 +28,7 @@ bus = &"bgm"
 [node name="Main" parent="." instance=ExtResource("1_uwrxv")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="PauseMenu" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -71,6 +72,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="TransitionColorRect" type="ColorRect" parent="CanvasLayer2"]
 unique_name_in_owner = true
