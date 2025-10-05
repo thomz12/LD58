@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://clewgy0kst7gl"]
+[gd_scene load_steps=8 format=3 uid="uid://clewgy0kst7gl"]
 
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_0kjv3"]
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_irhji"]
 [ext_resource type="Script" uid="uid://bnvri4b1wddjm" path="res://scripts/ui/start_menu.gd" id="2_m0hmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km2yg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1kfm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0g8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i11hm"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -65,6 +73,14 @@ alignment = 1
 [node name="ButtonStart" type="Button" parent="VBoxContainer/Bottom"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+theme_override_colors/font_hover_color = Color(0.8474741, 0.84747446, 0.84747493, 1)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_km2yg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s1kfm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x0g8l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i11hm")
 text = "Play game"
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/Bottom/ButtonStart" to="." method="_on_button_start_pressed"]

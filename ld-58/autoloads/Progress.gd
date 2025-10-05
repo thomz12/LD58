@@ -47,4 +47,4 @@ func _on_fish_caught(fish: Fish) -> void:
 	## Has every type been caught?
 	if 12 == get_unique_count():
 		print('caught every fish. Game Over!')
-		Events.game_won.emit()
+	Events.game_won.emit()

@@ -62,13 +62,10 @@ layout_mode = 2
 
 [node name="LabelTitle" type="Label" parent="CanvasLayer/PauseMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ButtonContinue" type="Button" parent="CanvasLayer/PauseMenu/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Continue"
 
 [node name="StartMenu" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
 unique_name_in_owner = true
@@ -86,5 +83,4 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.13333334, 0.1254902, 0.20392157, 1)
 
-[connection signal="pressed" from="CanvasLayer/PauseMenu/CenterContainer/VBoxContainer/ButtonContinue" to="." method="_on_button_continue_pressed"]
 [connection signal="game_start" from="CanvasLayer/StartMenu" to="." method="_on_start_menu_game_start"]

@@ -14,11 +14,6 @@ func _process(delta: float) -> void:
 		pause_menu.visible = get_tree().paused
 
 
-func _on_button_continue_pressed() -> void:
-	get_tree().paused = false
-	pause_menu.hide()
-
-
 func _on_start_menu_game_start() -> void:
 	await trans(0.0, 1.0, 90, true)
 	start_menu.queue_free()
