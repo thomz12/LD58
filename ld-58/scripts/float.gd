@@ -47,11 +47,12 @@ func _physics_process(delta: float) -> void:
 			rod.add_sibling(fx)
 
 			if hooked:
-				var fish = Spawner.get_fish()
-				fish.launch_vector = global_position.direction_to(rod.global_position)
-				fish.launch_distance = global_position.distance_to(rod.global_position)
-				add_child(fish)
-				Events.fish_caught.emit(fish)
+				for i in range(1):
+					var fish = Spawner.get_fish()
+					fish.launch_vector = global_position.direction_to(rod.global_position)
+					fish.launch_distance = global_position.distance_to(rod.global_position)
+					add_child(fish)
+					Events.fish_caught.emit(fish)
 
 				play_audio(sfx_come_up)
 			else:
