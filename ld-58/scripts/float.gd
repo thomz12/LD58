@@ -3,6 +3,7 @@ extends RigidBody2D
 class_name Float
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var crit_audio: AudioStreamPlayer2D = $CritAudio
 
 var sfx_come_up := load("res://audio/fx_float_comes_up.wav")
 var sfx_no_catch := load("res://audio/fx_float_something_water_thing.wav")
@@ -51,26 +52,25 @@ func _physics_process(delta: float) -> void:
 			rod.add_sibling(fx)
 
 			if hooked:
-				
+
 				var total_fish = 1
 				if randf() < crit_chance:
 					total_fish += bonus_per_crit
-				
+					crit_audio.play()
+
 				for i in range(total_fish):
 					var fish = Spawner.get_fish()
 					fish.launch_vector = global_position.direction_to(rod.global_position)
 					fish.launch_distance = global_position.distance_to(rod.global_position)
 					add_child(fish)
 					Events.fish_caught.emit(fish)
-					
+
 					if fish.data.upgrade_num == 0:
 						crit_chance += 0.01
-					
+
 					if fish.data.upgrade_num == 3:
 						bonus_per_crit += 1
-						
-						
-					
+
 				play_audio(sfx_come_up)
 			else:
 				launch = true
