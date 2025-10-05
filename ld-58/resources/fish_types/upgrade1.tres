@@ -9,7 +9,7 @@ region = Rect2(16.007893, 0.016493797, 16.336384, 16.70557)
 
 [resource]
 script = ExtResource("1_lpo0j")
-identifier = "Bone Upgrade"
+identifier = "Bone Bait"
 sprite = SubResource("AtlasTexture_qad5r")
 rarity = 5
 catch_base_value = 50

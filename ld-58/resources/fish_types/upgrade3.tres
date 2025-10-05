@@ -9,7 +9,7 @@ region = Rect2(48, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_fc05h")
-identifier = "Emblem Upgrade"
+identifier = "Double Catch Chance"
 sprite = SubResource("AtlasTexture_qad5r")
 rarity = 5
 catch_base_value = 50
