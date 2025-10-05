@@ -26,6 +26,8 @@ enum RARITY {
 @export var base_weight := 1.0
 @export_range(.5, 2.0, .01) var base_weight_modifier := 1.0 ## X is min, Y is max
 
+@export_group('Upgrade', 'upgrade_')
+@export var upgrade_description := "This does something"
 
 func get_length() -> float:
 	return base_length * base_length_modifier

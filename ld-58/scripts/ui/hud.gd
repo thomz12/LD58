@@ -9,5 +9,5 @@ func _ready() -> void:
 
 func _on_new_fish_type_caught(data: FishType) -> void:
 	var notification = notification_fish_scene.instantiate() as NotificationNewFishType
-	notification.fish_type = data
+	notification.data = data
 	add_child(notification)

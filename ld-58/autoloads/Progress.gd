@@ -30,7 +30,6 @@ func is_new_fish_type(fish_type: FishType) -> bool:
 
 	for catch in catch_history:
 		if catch.identifier == fish_type.identifier:
-			print(catch.identifier, " | ", fish_type.identifier)
 			is_new = false
 
 	return is_new
