@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c26ji0hvkb1ro"]
+[gd_scene load_steps=8 format=3 uid="uid://c26ji0hvkb1ro"]
 
 [ext_resource type="PackedScene" uid="uid://bgjyxgqyuigc1" path="res://scenes/main.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bcq8qcf1dkyha" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="AudioStream" uid="uid://cwuiid7ysagc6" path="res://audio/bgm.mp3" id="2_p57ef"]
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://clewgy0kst7gl" path="res://scenes/ui/start_menu.tscn" id="4_lbhrr"]
 [ext_resource type="Shader" uid="uid://dr05osk2w3u07" path="res://resources/shaders/transition.gdshader" id="5_iywne"]
@@ -18,6 +19,11 @@ shader_parameter/diamondPixelSize = 10.0
 [node name="Game" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_yqjtg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p57ef")
+autoplay = true
+bus = &"bgm"
 
 [node name="Main" parent="." instance=ExtResource("1_uwrxv")]
 
