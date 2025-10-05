@@ -13,6 +13,10 @@ var fish_types : Array[FishType] = [
 	preload("res://resources/fish_types/watcher.tres"),
 	preload("res://resources/fish_types/werewolf.tres"),
 	preload("res://resources/fish_types/zombie.tres"),
+	preload("res://resources/fish_types/upgrade0.tres"),
+	preload("res://resources/fish_types/upgrade1.tres"),
+	preload("res://resources/fish_types/upgrade2.tres"),
+	preload("res://resources/fish_types/upgrade3.tres"),
 ]
 
 var fish_scene := preload("res://scenes/fishing/float_fish.tscn")
