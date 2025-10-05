@@ -26,6 +26,8 @@ var time_hooked = 0.0
 
 var hooked_total_time = 0.0
 
+var launch = false
+
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	initial_mass = mass
@@ -53,6 +55,7 @@ func _physics_process(delta: float) -> void:
 
 				play_audio(sfx_come_up)
 			else:
+				launch = true
 				play_audio(sfx_no_catch)
 
 		else:
@@ -100,6 +103,10 @@ func _process(delta: float) -> void:
 			float_sprite.offset = Vector2(0, 2).rotated(-float_sprite.global_rotation) * sin(hooked_total_time * 4)
 		else:
 			float_sprite.offset = Vector2(0, 3).rotated(-float_sprite.global_rotation) * sin(hooked_total_time * 8)
+	
+	if launch:
+		launch = false
+		apply_impulse(Vector2(0, -50))
 
 
 
