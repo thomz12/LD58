@@ -9,7 +9,7 @@ region = Rect2(0, 32, 16, 16)
 
 [resource]
 script = ExtResource("1_lgsbw")
-identifier = "Shrimp"
+identifier = "Extraterrestrial Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 catch_base_value = 50
 base_weight = 0.5

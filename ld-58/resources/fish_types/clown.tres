@@ -9,7 +9,7 @@ region = Rect2(16, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_kcyxo")
-identifier = "Clown Fish"
+identifier = "Ghost Shrimp"
 sprite = SubResource("AtlasTexture_bubjg")
 catch_base_value = 200
 catch_range = Vector2(20, 40)

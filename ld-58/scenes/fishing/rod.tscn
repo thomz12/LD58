@@ -1,15 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxdp0ygjeeag3"]
+[gd_scene load_steps=8 format=3 uid="uid://cxdp0ygjeeag3"]
 
 [ext_resource type="Script" uid="uid://c8wtm7rdwttru" path="res://scripts/rod.gd" id="1_vf8jx"]
-[ext_resource type="Texture2D" uid="uid://bs6idl3blu5oo" path="res://sprites/test.png" id="2_bqyw3"]
+[ext_resource type="Texture2D" uid="uid://b8ej8rgv26kjw" path="res://sprites/ghost.png" id="2_b78ie"]
 [ext_resource type="Texture2D" uid="uid://bbbdy20qbnvfl" path="res://sprites/rod.png" id="2_vf8jx"]
 [ext_resource type="Script" uid="uid://c23ttgvl2jqig" path="res://scripts/ghost.gd" id="3_b78ie"]
 [ext_resource type="Script" uid="uid://b4tk0dyosq6tv" path="res://scripts/line_root.gd" id="3_ch35b"]
 [ext_resource type="Script" uid="uid://ccbgxprgug2dr" path="res://scripts/fishing_line.gd" id="4_erixr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b78ie"]
-atlas = ExtResource("2_bqyw3")
-region = Rect2(0, 0, 16.505, 20)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wfyh"]
 radius = 2.0
@@ -27,7 +23,8 @@ spring_strength = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 13.58)
-texture = SubResource("AtlasTexture_b78ie")
+texture = ExtResource("2_b78ie")
+hframes = 6
 script = ExtResource("3_b78ie")
 
 [node name="RodSprite" type="Sprite2D" parent="."]

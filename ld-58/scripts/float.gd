@@ -77,6 +77,7 @@ func _process(delta: float) -> void:
 				fx.emitting = true
 				fx.global_position = global_position
 				rod.add_sibling(fx)
+				hooked_total_time = 0.0 # reset so float goes down
 				print("Bite!")
 		else:
 			scale = Vector2(2, 2)
@@ -86,10 +87,14 @@ func _process(delta: float) -> void:
 				hooked = false
 				time_hooked = 0.0
 				time_till_catch = randf_range(2.0, 4.0)
+				hooked_total_time = hooked_total_time / 2.0
 	
 		hooked_total_time += delta
 		var float_sprite = find_child("FloatSprite") as Sprite2D
-		float_sprite.offset = Vector2(0, 2).rotated(-float_sprite.global_rotation) * sin(hooked_total_time * 4)
+		if not hooked:
+			float_sprite.offset = Vector2(0, 2).rotated(-float_sprite.global_rotation) * sin(hooked_total_time * 4)
+		else:
+			float_sprite.offset = Vector2(0, 3).rotated(-float_sprite.global_rotation) * sin(hooked_total_time * 8)
 	
 
 

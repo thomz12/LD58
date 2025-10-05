@@ -9,6 +9,6 @@ region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_q6s42")
-identifier = "Carvanha"
+identifier = "Zombie Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

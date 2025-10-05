@@ -9,7 +9,7 @@ region = Rect2(48, 32, 16, 16)
 
 [resource]
 script = ExtResource("1_spc3q")
-identifier = "Shark"
+identifier = "Killer Guppy"
 sprite = SubResource("AtlasTexture_bubjg")
 catch_base_value = 200
 catch_range = Vector2(20, 40)

@@ -19,7 +19,7 @@ size = Vector2(20, 184)
 [node name="Background1" type="Sprite2D" parent="."]
 
 [node name="Background2" type="Sprite2D" parent="."]
-position = Vector2(171, 131)
+position = Vector2(185, 53)
 texture = ExtResource("1_tbgi4")
 
 [node name="Water" type="StaticBody2D" parent="."]

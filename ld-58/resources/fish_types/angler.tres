@@ -9,6 +9,6 @@ region = Rect2(32, 32, 16, 16)
 
 [resource]
 script = ExtResource("1_o7esb")
-identifier = "Angler Fish"
+identifier = "Werewolf Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

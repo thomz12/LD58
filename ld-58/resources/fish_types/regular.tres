@@ -9,6 +9,6 @@ region = Rect2(48, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_be38p")
-identifier = "Regular"
+identifier = "Lantern Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
