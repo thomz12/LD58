@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgjyxgqyuigc1"]
+[gd_scene load_steps=12 format=3 uid="uid://bgjyxgqyuigc1"]
 
 [ext_resource type="PackedScene" uid="uid://cxdp0ygjeeag3" path="res://scenes/fishing/rod.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_tbgi4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/water.gd" id="3_tbgi4"]
 [ext_resource type="Script" uid="uid://b3s6wfywbm56o" path="res://scripts/ui/hud.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ccv86tyg237tx" path="res://scenes/fishing/altar.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bqhlak50x0uy3" path="res://scenes/camera.tscn" id="8_tipki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(456, 20)
@@ -103,3 +104,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_tefeu")
+
+[node name="Camera" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(160, 90)

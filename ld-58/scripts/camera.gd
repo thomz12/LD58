@@ -1,27 +1,34 @@
 extends Camera2D
+class_name Camera
 
+@export_group('Shake')
+@export var shake_intensity_limit := 15.0
+@export var shake_fade_speed: float = 10
 
-@export
-var targets: Array[Node2D];
+var rng = RandomNumberGenerator.new()
+var shake_intensity: float = 0.0
 
 func _ready() -> void:
-	position_smoothing_enabled = true
-	position_smoothing_speed = 3
-	
-	Events.add_camera_target.connect(
-		func(target: Node2D):
-			targets.append(target)
+	Events.fish_bite.connect(func():
+		apply_shake(2)
+	)
+	Events.fish_fake_out.connect(func():
+		apply_shake(1)
 	)
 
-func _process(_delta: float) -> void:
-	
-	var average_position := Vector2()
-	if targets.size() > 0:
-		for target in targets:
-			average_position += target.global_position
-		average_position /= targets.size()
-	else:
-		print("No targets in array.")
-		
-	position = Vector2(average_position.x, position.y)
-	
+
+func _process(delta):
+	if shake_intensity > 0:
+		shake_intensity = lerp(shake_intensity, 0.0, shake_fade_speed * delta)
+		offset = _get_random_offset()
+
+
+func apply_shake(intensity : int):
+	shake_intensity = intensity
+
+
+func _get_random_offset() -> Vector2:
+	return Vector2(
+		rng.randf_range(-shake_intensity, shake_intensity),
+		rng.randf_range(-shake_intensity, shake_intensity)
+	)

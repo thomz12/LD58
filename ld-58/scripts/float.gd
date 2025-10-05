@@ -76,6 +76,7 @@ func _process(delta: float) -> void:
 					fx.emitting = true
 					fx.global_position = global_position
 					rod.add_sibling(fx)
+					Events.fish_fake_out.emit()
 					play_audio(sfx_fake_out)
 
 
@@ -87,6 +88,7 @@ func _process(delta: float) -> void:
 				rod.add_sibling(fx)
 				hooked_total_time = 0.0 # reset so float goes down
 				print("Bite!")
+				Events.fish_bite.emit()
 				play_audio(sfx_fish_bite)
 		else:
 			scale = Vector2(2, 2)
