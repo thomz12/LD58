@@ -5,6 +5,8 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var transition_color_rect: ColorRect = %TransitionColorRect
 
+var is_loading := false
+
 func _ready() -> void:
 	get_tree().paused = true
 
@@ -15,6 +17,8 @@ func _process(delta: float) -> void:
 
 
 func _on_start_menu_game_start() -> void:
+	if is_loading: return
+	is_loading = true
 	await trans(0.0, 1.0, 90, true)
 	start_menu.queue_free()
 	await trans(1.0, 0.0, 270, true)
