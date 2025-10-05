@@ -9,9 +9,10 @@ region = Rect2(0, 0, 16.131226, 16.773403)
 
 [resource]
 script = ExtResource("1_gfeuh")
-identifier = "Witch Hat Upgrade"
+identifier = "Witch Hat"
 sprite = SubResource("AtlasTexture_qad5r")
 rarity = 5
 catch_base_value = 50
 base_weight = 0.5
+upgrade_description = "Increased Crit Chance!"
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
