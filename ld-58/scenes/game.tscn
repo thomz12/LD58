@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c26ji0hvkb1ro"]
+
+[ext_resource type="PackedScene" uid="uid://bgjyxgqyuigc1" path="res://scenes/main.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://bcq8qcf1dkyha" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="3_lnu2h"]
+
+[node name="Game" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_yqjtg")
+
+[node name="Main" parent="." instance=ExtResource("1_uwrxv")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_lnu2h")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08468992, 0.08468992, 0.08468992, 0.5647059)
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelTitle" type="Label" parent="CanvasLayer/PauseMenu/CenterContainer"]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
