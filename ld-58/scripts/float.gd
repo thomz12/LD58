@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 					crit_audio.play()
 
 				for i in range(total_fish):
-					var fish = Spawner.get_fish()
+					var fish = Spawner.get_fish(total_fish != 1) # Only get fish if crit, if 1 allow upgrades.
 					fish.launch_vector = global_position.direction_to(rod.global_position)
 					fish.launch_distance = global_position.distance_to(rod.global_position)
 					add_child(fish)
@@ -80,6 +80,9 @@ func _physics_process(delta: float) -> void:
 						min_wait_time = min_wait_time_base / (1 + wait_upgrades * 0.1)
 						max_wait_time = max_wait_time_base / (1 + wait_upgrades * 0.1)
 						print("Wait upgrade! min: ", min_wait_time, " max: ", max_wait_time)
+					
+					if fish.data.upgrade_num == 2:
+						Spawner.increase_odds()
 					
 					if fish.data.upgrade_num == 3:
 						bonus_per_crit += 1

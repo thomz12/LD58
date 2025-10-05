@@ -37,26 +37,65 @@ var special_upgrades : Array[FishType] = [
 	preload("res://resources/fish_types/upgrade3.tres"),
 ]
 
-var common = 50
-var uncommon = 10
-var rare = 2.5
-var legendary = 1
-var mythical = 0.1
-var normal_upgrade = 20
-var special_upgrade = 1
+var common_start = 50.0
+var uncommon_start = 10.0
+var rare_start = 2.5
+var legendary_start = 0.1
+var mythical_start = 0.01
+var normal_upgrade_start = 30.0
+var special_upgrade_start = 1.0
+
+var common_end = 30.0
+var uncommon_end = 15.0
+var rare_end = 5.0
+var legendary_end = 2.5
+var mythical_end = 1.0
+var normal_upgrade_end = 20.0
+var special_upgrade_end = 1.0
+
+var common = common_start
+var uncommon = uncommon_start
+var rare = rare_start
+var legendary = legendary_start
+var mythical = mythical_start
+var normal_upgrade = normal_upgrade_start
+var special_upgrade = special_upgrade_start
+
+var level = 0
 
 var rng = RandomNumberGenerator.new()
 
 var fish_scene := preload("res://scenes/fishing/float_fish.tscn")
 
-func get_fish() -> Fish:
+func get_fish(only_fish = false) -> Fish:
 	var new_fish := fish_scene.instantiate() as Fish
-	new_fish.data = _get_fish_type()
+	new_fish.data = _get_fish_type(only_fish)
 	return new_fish
 
-func _get_fish_type() -> FishType:
+func increase_odds():
+	level += 1
+	var t = 1.0 - exp(-level * 0.05)
+	common = lerp(common_start, common_end, t)
+	uncommon = lerp(uncommon_start, uncommon_end, t)
+	rare = lerp(rare_start, rare_end, t)
+	legendary = lerp(legendary_start, legendary_end, t)
+	mythical = lerp(mythical_start, mythical_end, t)
+	normal_upgrade = lerp(normal_upgrade_start, normal_upgrade_end, t)
+	special_upgrade = lerp(special_upgrade_start, special_upgrade_end, t)
 	
-	var weights = [common, uncommon, rare, legendary, mythical, normal_upgrade, special_upgrade]
+	print("Level: ", level, " odds:")
+	print("common: ", common);
+	print("uncommon: ", uncommon);
+	print("rare: ", rare);
+	print("legendary: ", legendary);
+	print("mythical: ", mythical);
+	print("normal_upgrade: ", normal_upgrade);
+	print("special_upgrade: ", special_upgrade);
+	
+
+func _get_fish_type(only_fish = false) -> FishType:
+	
+	var weights = [common, uncommon, rare, legendary, mythical, 0 if only_fish else normal_upgrade, 0 if only_fish else special_upgrade]
 	var type = rng.rand_weighted(weights)
 	
 	match type:
