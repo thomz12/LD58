@@ -1,18 +1,18 @@
 extends Node
 
 var fish_types : Array[FishType] = [
-	preload("res://resources/fish_types/eel.tres"),
-	preload("res://resources/fish_types/ray.tres"),
-	preload("res://resources/fish_types/idol.tres"),
-	preload("res://resources/fish_types/tuna.tres"),
-	preload("res://resources/fish_types/shark.tres"),
+	preload("res://resources/fish_types/alien.tres"),
+	preload("res://resources/fish_types/bone.tres"),
+	preload("res://resources/fish_types/frank.tres"),
+	preload("res://resources/fish_types/ghost_shrimp.tres"),
+	preload("res://resources/fish_types/guppy.tres"),
 	preload("res://resources/fish_types/clown.tres"),
-	preload("res://resources/fish_types/angler.tres"),
-	preload("res://resources/fish_types/shrimp.tres"),
-	preload("res://resources/fish_types/piranha.tres"),
-	preload("res://resources/fish_types/regular.tres"),
-	preload("res://resources/fish_types/goldfish.tres"),
-	preload("res://resources/fish_types/carvanha.tres"),
+	preload("res://resources/fish_types/lantern.tres"),
+	preload("res://resources/fish_types/mummy.tres"),
+	preload("res://resources/fish_types/pumpkin.tres"),
+	preload("res://resources/fish_types/watcher.tres"),
+	preload("res://resources/fish_types/werewolf.tres"),
+	preload("res://resources/fish_types/zombie.tres"),
 ]
 
 var fish_scene := preload("res://scenes/fishing/float_fish.tscn")

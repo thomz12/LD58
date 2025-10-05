@@ -6,15 +6,14 @@ var catch_history : Array[Fish] = []
 
 
 func _ready() -> void:
-	# TODO: turn back on
-	#Events.fish_caught.connect(_on_fish_caught)
+	Events.fish_caught.connect(_on_fish_caught)
 
 	## TODO: test data remove
-	for i in 10:
-		var fish := fish_scene.instantiate() as Fish
-		fish.data = load("res://resources/fish_types/goldfish.tres")
-		add_child(fish)
-		catch_history.append(fish)
+	#for i in 10:
+		#var fish := fish_scene.instantiate() as Fish
+		#fish.data = load("res://resources/fish_types/zombie.tres")
+		#add_child(fish)
+		#catch_history.append(fish)
 
 
 func get_catch_count(fish_type: FishType) -> int:

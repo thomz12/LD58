@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://3nkror7g42v5"]
 
-[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_bswab"]
-[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_g4f68"]
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_di6ln"]
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_xrgvs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bubjg"]
-atlas = ExtResource("2_g4f68")
+atlas = ExtResource("2_xrgvs")
 region = Rect2(32, 16, 16, 16)
 
 [resource]
-script = ExtResource("1_bswab")
+script = ExtResource("1_di6ln")
 identifier = "Franken Fish"
 sprite = SubResource("AtlasTexture_bubjg")
+rarity = 1
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

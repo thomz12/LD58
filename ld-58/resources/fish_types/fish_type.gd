@@ -1,8 +1,17 @@
 extends Resource
 class_name FishType
 
+enum RARITY {
+	COMMON,
+	UNCOMMON,
+	RARE,
+	LEGENDARY,
+	MYTHICAL
+}
+
 @export var identifier := 'Goldfish' ## The type of fish
 @export var sprite : AtlasTexture
+@export var rarity : RARITY = RARITY.COMMON
 
 @export_group('Catching', 'catch_')
 @export var catch_base_value := 100

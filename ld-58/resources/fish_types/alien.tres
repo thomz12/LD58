@@ -1,16 +1,17 @@
 [gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://bu5nspr3nhqtk"]
 
-[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_lgsbw"]
-[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_fo1oy"]
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_hari4"]
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_7howo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bubjg"]
-atlas = ExtResource("2_fo1oy")
+atlas = ExtResource("2_7howo")
 region = Rect2(0, 32, 16, 16)
 
 [resource]
-script = ExtResource("1_lgsbw")
+script = ExtResource("1_hari4")
 identifier = "Extraterrestrial Fish"
 sprite = SubResource("AtlasTexture_bubjg")
+rarity = 3
 catch_base_value = 50
 base_weight = 0.5
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

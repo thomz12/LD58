@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://dft4qig8y46ih"]
 
-[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_er23n"]
-[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_6ikt3"]
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_sn6dh"]
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_4tfvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bubjg"]
-atlas = ExtResource("2_6ikt3")
+atlas = ExtResource("2_4tfvv")
 region = Rect2(32, 0, 16, 16)
 
 [resource]
-script = ExtResource("1_er23n")
+script = ExtResource("1_sn6dh")
 identifier = "Bone Fish"
 sprite = SubResource("AtlasTexture_bubjg")
+rarity = 1
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

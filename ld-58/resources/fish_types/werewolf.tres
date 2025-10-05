@@ -11,4 +11,5 @@ region = Rect2(32, 32, 16, 16)
 script = ExtResource("1_o7esb")
 identifier = "Werewolf Fish"
 sprite = SubResource("AtlasTexture_bubjg")
+rarity = 2
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
