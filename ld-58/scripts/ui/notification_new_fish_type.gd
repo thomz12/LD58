@@ -1,7 +1,7 @@
 extends MarginContainer
 class_name NotificationNewFishType
 
-@onready var label_title: Label = %LabelTitle
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var texture_rect: TextureRect = %TextureRect
 @onready var label_name: Label = %LabelName
 @onready var label_rarity: RichTextLabel = %LabelRarity
@@ -24,3 +24,5 @@ func _ready() -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 0, 1.0).set_delay(5.0)
 	tween.tween_callback(func(): queue_free())
+
+	audio_stream_player.play()

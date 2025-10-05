@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm4if6i8tns4m"]
+[gd_scene load_steps=7 format=3 uid="uid://dm4if6i8tns4m"]
 
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_57map"]
 [ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_niefe"]
 [ext_resource type="Script" uid="uid://4t6xeqn4221t" path="res://scripts/ui/notification_new_fish_type.gd" id="2_rop7t"]
+[ext_resource type="AudioStream" uid="uid://c6x0kgqa13u6x" path="res://audio/fx_fish_caught.wav" id="3_mt56a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niefe"]
 bg_color = Color(0, 0, 0, 1)
@@ -32,8 +33,11 @@ grow_horizontal = 2
 theme = ExtResource("1_57map")
 script = ExtResource("2_rop7t")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mt56a")
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(160, 0)
+custom_minimum_size = Vector2(144, 0)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_niefe")
