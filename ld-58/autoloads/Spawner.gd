@@ -1,26 +1,41 @@
 extends Node
 
 var fish_types : Array[FishType] = [
-	preload("res://resources/fish_types/alien.tres"),
-	preload("res://resources/fish_types/bone.tres"),
-	preload("res://resources/fish_types/frank.tres"),
-	preload("res://resources/fish_types/ghost_shrimp.tres"),
-	preload("res://resources/fish_types/guppy.tres"),
-	preload("res://resources/fish_types/clown.tres"),
-	preload("res://resources/fish_types/lantern.tres"),
-	preload("res://resources/fish_types/mummy.tres"),
-	preload("res://resources/fish_types/pumpkin.tres"),
-	preload("res://resources/fish_types/watcher.tres"),
-	preload("res://resources/fish_types/werewolf.tres"),
 	preload("res://resources/fish_types/zombie.tres"),
+	preload("res://resources/fish_types/mummy.tres"),
+	preload("res://resources/fish_types/ghost_shrimp.tres"),
+	preload("res://resources/fish_types/lantern.tres"),
+	preload("res://resources/fish_types/bone.tres"),
+	preload("res://resources/fish_types/pumpkin.tres"),
+	preload("res://resources/fish_types/frank.tres"),
+	preload("res://resources/fish_types/clown.tres"),
+	preload("res://resources/fish_types/werewolf.tres"),
+	preload("res://resources/fish_types/alien.tres"),
+	preload("res://resources/fish_types/watcher.tres"),
+	preload("res://resources/fish_types/guppy.tres"),
 	preload("res://resources/fish_types/upgrade0.tres"),
 	preload("res://resources/fish_types/upgrade1.tres"),
 	preload("res://resources/fish_types/upgrade2.tres"),
 	preload("res://resources/fish_types/upgrade3.tres"),
 ]
 
-var fish_scene := preload("res://scenes/fishing/float_fish.tscn")
+var common = 50
+var uncommon = 20
+var rare = 5
+var legendary = 1
+var mythical = 0.1
 
+var weights = PackedFloat32Array([
+	common, common, common, common,
+	uncommon, uncommon, uncommon,
+	rare, rare,
+	legendary, legendary,
+	mythical, 0, 0, 0, 0
+])
+
+var rng = RandomNumberGenerator.new()
+
+var fish_scene := preload("res://scenes/fishing/float_fish.tscn")
 
 func get_fish() -> Fish:
 	var new_fish := fish_scene.instantiate() as Fish
@@ -29,4 +44,5 @@ func get_fish() -> Fish:
 
 
 func _get_fish_type() -> FishType:
-	return fish_types.pick_random()
+	return fish_types[rng.rand_weighted(weights)]
+	# return fish_types.pick_random()
