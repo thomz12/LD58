@@ -42,8 +42,8 @@ var uncommon = 10
 var rare = 2.5
 var legendary = 1
 var mythical = 0.1
-var normal_upgrade = 40
-var special_upgrade = 10
+var normal_upgrade = 20
+var special_upgrade = 1
 
 var rng = RandomNumberGenerator.new()
 

@@ -15,4 +15,5 @@ rarity = 5
 catch_base_value = 50
 base_weight = 0.5
 upgrade_description = "Increased Crit Chance!"
+upgrade_num = 0
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

@@ -33,6 +33,12 @@ var launch = false
 var crit_chance = 0.01
 var bonus_per_crit = 1
 
+var wait_upgrades = 0
+var min_wait_time_base = 4.0
+var max_wait_time_base = 8.0
+var min_wait_time = min_wait_time_base
+var max_wait_time = max_wait_time_base
+
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	initial_mass = mass
@@ -67,10 +73,20 @@ func _physics_process(delta: float) -> void:
 
 					if fish.data.upgrade_num == 0:
 						crit_chance += 0.01
-
+						print("Increased crit chance! ", crit_chance)
+					
+					if fish.data.upgrade_num == 1:
+						wait_upgrades += 1
+						min_wait_time = min_wait_time_base / (1 + wait_upgrades * 0.1)
+						max_wait_time = max_wait_time_base / (1 + wait_upgrades * 0.1)
+						print("Wait upgrade! min: ", min_wait_time, " max: ", max_wait_time)
+					
 					if fish.data.upgrade_num == 3:
 						bonus_per_crit += 1
-
+						print("Bonus per crit: ", bonus_per_crit)
+						
+						
+					
 				play_audio(sfx_come_up)
 			else:
 				launch = true
@@ -114,7 +130,7 @@ func _process(delta: float) -> void:
 			if time_hooked > 1.0:
 				hooked = false
 				time_hooked = 0.0
-				time_till_catch = randf_range(2.0, 4.0)
+				time_till_catch = randf_range(min_wait_time, max_wait_time)
 				hooked_total_time = hooked_total_time / 2.0
 
 		hooked_total_time += delta
@@ -141,7 +157,7 @@ func _on_body_entered(body):
 		hooked = false
 		hooked_total_time = 0.0
 		has_fake_out = randi_range(1, 8) == 1;
-		time_till_catch = randf_range(3.0, 8.0)
+		time_till_catch = randf_range(min_wait_time, max_wait_time)
 		print("Casting!")
 
 		## AUDIO STUFF
