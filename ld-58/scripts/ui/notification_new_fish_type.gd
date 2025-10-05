@@ -4,7 +4,7 @@ class_name NotificationNewFishType
 @onready var label_title: Label = %LabelTitle
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var texture_rect: TextureRect = %TextureRect
-@onready var label_name: Label = %LabelName
+@onready var label_name: RichTextLabel = %LabelName
 @onready var label_rarity: RichTextLabel = %LabelRarity
 
 var data: FishType
@@ -30,6 +30,6 @@ func _set_fish_data() -> void:
 
 func _set_upgrade_data() -> void:
 	label_title.text = "New upgrade unlocked"
-	label_name.text = data.identifier
+	label_name.text = "[color=red]%s" % data.identifier
 	texture_rect.texture = data.sprite
 	label_rarity.text = data.upgrade_description
