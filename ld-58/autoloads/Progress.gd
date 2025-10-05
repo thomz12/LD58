@@ -32,7 +32,7 @@ func get_unique_count() -> int:
 	var seen : Array[String] = []
 
 	for catch in catch_history:
-		if not seen.has(catch.identifier):
+		if not seen.has(catch.identifier) and catch.rarity != FishType.RARITY.UPGRADE:
 			seen.append(catch.identifier)
 
 	return seen.size()
