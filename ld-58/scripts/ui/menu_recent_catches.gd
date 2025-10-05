@@ -4,7 +4,7 @@ class_name MenuRecentCatches
 @onready var catches_container: VBoxContainer = %CatchesContainer
 
 var catch_ui_element := load("res://scenes/ui/catches/catch.tscn")
-var catches: Array[Fish] = []
+var catches: Array[FishType] = []
 
 func _ready() -> void:
 	catches = Progress.catch_history

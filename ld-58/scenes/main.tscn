@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgjyxgqyuigc1"]
+[gd_scene load_steps=10 format=3 uid="uid://bgjyxgqyuigc1"]
 
 [ext_resource type="PackedScene" uid="uid://cxdp0ygjeeag3" path="res://scenes/fishing/rod.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dlipgeh8lptfa" path="res://sprites/ground.png" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://crwijcqfixqcc" path="res://sprites/sludge.png" id="2_jyhfs"]
-[ext_resource type="Script" uid="uid://dnodao07emvn4" path="res://scripts/water.gd" id="3_tbgi4"]
+[ext_resource type="Script" path="res://scripts/water.gd" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://b3s6wfywbm56o" path="res://scripts/ui/hud.gd" id="6_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(456, 20)
@@ -87,3 +88,14 @@ debug_color = Color(0.96581644, 0, 0.48731834, 0.41960785)
 
 [node name="Rod" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(207, -93)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_tefeu")

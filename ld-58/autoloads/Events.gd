@@ -8,3 +8,6 @@ signal fish_caught(fish: Fish)
 signal float_cast()
 @warning_ignore("unused_signal")
 signal float_return()
+
+@warning_ignore("unused_signal")
+signal notification_new_fish_type(data: FishType)

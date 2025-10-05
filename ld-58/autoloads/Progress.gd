@@ -2,7 +2,7 @@ extends Node
 
 var fish_scene := load("res://scenes/fishing/float_fish.tscn")
 
-var catch_history : Array[Fish] = []
+var catch_history : Array[FishType] = []
 
 
 func _ready() -> void:
@@ -19,11 +19,25 @@ func _ready() -> void:
 func get_catch_count(fish_type: FishType) -> int:
 	var count := 0
 	for catch in catch_history:
-		if catch.data.identifier == fish_type.identifier:
+		if catch.identifier == fish_type.identifier:
 			count += 1
 
 	return count
 
 
+func is_new_fish_type(fish_type: FishType) -> bool:
+	var is_new := true
+
+	for catch in catch_history:
+		if catch.identifier == fish_type.identifier:
+			print(catch.identifier, " | ", fish_type.identifier)
+			is_new = false
+
+	return is_new
+
+
 func _on_fish_caught(fish: Fish) -> void:
-	catch_history.append(fish)
+	if is_new_fish_type(fish.data):
+		Events.notification_new_fish_type.emit(fish.data)
+
+	catch_history.append(fish.data)
