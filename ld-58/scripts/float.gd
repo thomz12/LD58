@@ -113,7 +113,7 @@ func _on_body_entered(body):
 		stuck = true
 		hooked = false
 		hooked_total_time = 0.0
-		has_fake_out = randi_range(1, 1) == 1;
+		has_fake_out = randi_range(1, 8) == 1;
 		time_till_catch = randf_range(3.0, 8.0)
 		print("Casting!")
 
