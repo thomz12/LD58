@@ -30,7 +30,7 @@ var weights = PackedFloat32Array([
 	uncommon, uncommon, uncommon,
 	rare, rare,
 	legendary, legendary,
-	mythical, 10, 10, 10, 2
+	mythical, 40, 40, 40, 10
 ])
 
 var rng = RandomNumberGenerator.new()

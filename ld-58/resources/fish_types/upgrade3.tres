@@ -15,4 +15,5 @@ rarity = 5
 catch_base_value = 50
 base_weight = 0.5
 upgrade_description = "More Fish on Crit!"
+upgrade_num = 3
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

@@ -28,6 +28,10 @@ var hooked_total_time = 0.0
 
 var launch = false
 
+# upgradables
+var crit_chance = 0.01
+var bonus_per_crit = 1
+
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	initial_mass = mass
@@ -47,15 +51,26 @@ func _physics_process(delta: float) -> void:
 			rod.add_sibling(fx)
 
 			if hooked:
-				for i in range(1):
+				
+				var total_fish = 1
+				if randf() < crit_chance:
+					total_fish += bonus_per_crit
+				
+				for i in range(total_fish):
 					var fish = Spawner.get_fish()
 					fish.launch_vector = global_position.direction_to(rod.global_position)
 					fish.launch_distance = global_position.distance_to(rod.global_position)
 					add_child(fish)
 					Events.fish_caught.emit(fish)
 					
-					if fish.data.identifier == ""
-
+					if fish.data.upgrade_num == 0:
+						crit_chance += 0.01
+					
+					if fish.data.upgrade_num == 3:
+						bonus_per_crit += 1
+						
+						
+					
 				play_audio(sfx_come_up)
 			else:
 				launch = true
