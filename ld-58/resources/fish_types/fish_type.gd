@@ -6,7 +6,8 @@ enum RARITY {
 	UNCOMMON,
 	RARE,
 	LEGENDARY,
-	MYTHICAL
+	MYTHICAL,
+	UPGRADE
 }
 
 @export var identifier := 'Goldfish' ## The type of fish

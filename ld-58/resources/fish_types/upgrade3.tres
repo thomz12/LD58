@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://v1fqfenj8kvf"]
+
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_fc05h"]
+[ext_resource type="Texture2D" uid="uid://xo7ng3gg0m4j" path="res://sprites/upgrades.png" id="2_lntdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qad5r"]
+atlas = ExtResource("2_lntdg")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_fc05h")
+identifier = "Double Catch Chance"
+sprite = SubResource("AtlasTexture_qad5r")
+rarity = 5
+catch_base_value = 50
+base_weight = 0.5
+metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

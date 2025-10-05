@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://bkyy0gmpbdymd"]
+
+[ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_lpo0j"]
+[ext_resource type="Texture2D" uid="uid://xo7ng3gg0m4j" path="res://sprites/upgrades.png" id="2_1rli4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qad5r"]
+atlas = ExtResource("2_1rli4")
+region = Rect2(16.007893, 0.016493797, 16.336384, 16.70557)
+
+[resource]
+script = ExtResource("1_lpo0j")
+identifier = "Bone Bait"
+sprite = SubResource("AtlasTexture_qad5r")
+rarity = 5
+catch_base_value = 50
+base_weight = 0.5
+metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
