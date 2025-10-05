@@ -1,15 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgjyxgqyuigc1"]
+[gd_scene load_steps=9 format=3 uid="uid://bgjyxgqyuigc1"]
 
 [ext_resource type="PackedScene" uid="uid://cxdp0ygjeeag3" path="res://scenes/fishing/rod.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dlipgeh8lptfa" path="res://sprites/ground.png" id="2_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://bh30bgc4emjgm" path="res://sprites/water.png" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://crwijcqfixqcc" path="res://sprites/sludge.png" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://dnodao07emvn4" path="res://scripts/water.gd" id="3_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(456, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(16, 16)
+size = Vector2(15.311321, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
 size = Vector2(20, 184)
@@ -33,26 +34,28 @@ shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Water"]
 texture_repeat = 2
-position = Vector2(115, -5)
-texture = ExtResource("3_jyhfs")
+position = Vector2(161, -8)
+texture = ExtResource("2_jyhfs")
 region_enabled = true
-region_rect = Rect2(0, 0, 344, 16)
+region_rect = Rect2(0, 0, 278.9146, 31.7303)
+script = ExtResource("3_tbgi4")
 
 [node name="Platform" type="StaticBody2D" parent="."]
-position = Vector2(-155, 1)
+position = Vector2(-93, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
-position = Vector2(0, 175)
-scale = Vector2(25.44, 1)
-texture = ExtResource("2_0wfyh")
+position = Vector2(142, 173)
+texture = ExtResource("2_jyhfs")
+region_enabled = true
+region_rect = Rect2(-0.5793457, 60.02343, 98.01318, 47.98027)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(0, 175)
+position = Vector2(-8.7599945, 174)
 scale = Vector2(25.44, 1)
 shape = SubResource("RectangleShape2D_sugp2")
 
 [node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2(467, 2)
+position = Vector2(-186, 473)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform2"]
 position = Vector2(0, 175)
