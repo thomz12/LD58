@@ -48,3 +48,4 @@ scale_amount_curve = SubResource("Curve_1ug3j")
 libraries = {
 &"": SubResource("AnimationLibrary_8nc7t")
 }
+autoplay = "free"
