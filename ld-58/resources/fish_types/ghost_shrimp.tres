@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://x580wdbrupe7"]
+[gd_resource type="Resource" script_class="FishType" load_steps=4 format=3 uid="uid://dm6ydnmdvc0sn"]
 
 [ext_resource type="Script" uid="uid://cmdbr2lwmuv8g" path="res://resources/fish_types/fish_type.gd" id="1_aemhg"]
 [ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_f82bx"]

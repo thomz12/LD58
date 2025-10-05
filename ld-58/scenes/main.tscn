@@ -45,10 +45,10 @@ script = ExtResource("3_tbgi4")
 position = Vector2(-93, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
-position = Vector2(142, 173)
+position = Vector2(142, 169)
 texture = ExtResource("2_jyhfs")
 region_enabled = true
-region_rect = Rect2(-0.5793457, 60.02343, 98.01318, 47.98027)
+region_rect = Rect2(-0.5793457, 47.451057, 98.01318, 60.552643)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(-8.7599945, 174)
