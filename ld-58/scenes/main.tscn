@@ -34,7 +34,7 @@ shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Water"]
 texture_repeat = 2
-position = Vector2(161, -8)
+position = Vector2(161, -13)
 texture = ExtResource("2_jyhfs")
 region_enabled = true
 region_rect = Rect2(0, 0, 278.9146, 31.7303)
