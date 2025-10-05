@@ -10,7 +10,9 @@ var launch_distance := 0.0
 var launch_force := 10
 
 func _ready() -> void:
-	apply_impulse.call_deferred((launch_vector * (launch_force * launch_distance)).limit_length(700.0))
+	var launch_velocity := (launch_vector * (launch_force * launch_distance)).limit_length(600.0)
+	#print(launch_velocity.length())
+	apply_impulse.call_deferred(launch_velocity)
 	apply_torque_impulse.call_deferred(100)
 
 	assert(data, 'Fish without an identity. No data was set.')
