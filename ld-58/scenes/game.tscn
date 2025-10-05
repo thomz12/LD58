@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c26ji0hvkb1ro"]
+[gd_scene load_steps=7 format=3 uid="uid://c26ji0hvkb1ro"]
 
 [ext_resource type="PackedScene" uid="uid://bgjyxgqyuigc1" path="res://scenes/main.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bcq8qcf1dkyha" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://clewgy0kst7gl" path="res://scenes/ui/start_menu.tscn" id="4_lbhrr"]
+[ext_resource type="Shader" uid="uid://dr05osk2w3u07" path="res://resources/shaders/transition.gdshader" id="5_iywne"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p57ef"]
+shader = ExtResource("5_iywne")
+shader_parameter/progress = 0.0
+shader_parameter/multiplier = 3.0
+shader_parameter/angle = 90.000004275
+shader_parameter/anchor = Vector2(0.5, 0.5)
+shader_parameter/anchorOffset = 1.0
+shader_parameter/diamondPixelSize = 10.0
 
 [node name="Game" type="Node2D"]
 process_mode = 3
@@ -53,4 +64,21 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Continue"
 
+[node name="StartMenu" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
+unique_name_in_owner = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TransitionColorRect" type="ColorRect" parent="CanvasLayer2"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_p57ef")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+
 [connection signal="pressed" from="CanvasLayer/PauseMenu/CenterContainer/VBoxContainer/ButtonContinue" to="." method="_on_button_continue_pressed"]
+[connection signal="game_start" from="CanvasLayer/StartMenu" to="." method="_on_start_menu_game_start"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://clewgy0kst7gl"]
+
+[ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_0kjv3"]
+[ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_irhji"]
+[ext_resource type="Script" uid="uid://bnvri4b1wddjm" path="res://scripts/ui/start_menu.gd" id="2_m0hmm"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0kjv3")
+script = ExtResource("2_m0hmm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -153.0
+offset_right = 441.0
+offset_bottom = 359.0
+texture = ExtResource("1_irhji")
+
+[node name="Background2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(185, 53)
+texture = ExtResource("1_irhji")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+alignment = 1
+
+[node name="LabelLD" type="Label" parent="VBoxContainer/Top"]
+layout_mode = 2
+text = "Made by Thom Zeilstra & Mathijs Koning for LD58"
+horizontal_alignment = 1
+
+[node name="Center" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelTitle" type="Label" parent="VBoxContainer/Center"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "a game about 
+fish and ghosts"
+horizontal_alignment = 1
+
+[node name="Bottom" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonStart" type="Button" parent="VBoxContainer/Bottom"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Play game"
+
+[connection signal="pressed" from="VBoxContainer/Bottom/ButtonStart" to="." method="_on_button_start_pressed"]
