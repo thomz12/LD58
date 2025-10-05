@@ -6,6 +6,20 @@ class_name MenuDex
 @onready var button_next: Button = %ButtonNext
 @onready var button_previous: Button = %ButtonPrevious
 
+var fish_types : Array[FishType] = [
+	preload("res://resources/fish_types/zombie.tres"),
+	preload("res://resources/fish_types/mummy.tres"),
+	preload("res://resources/fish_types/ghost_shrimp.tres"),
+	preload("res://resources/fish_types/lantern.tres"),
+	preload("res://resources/fish_types/bone.tres"),
+	preload("res://resources/fish_types/pumpkin.tres"),
+	preload("res://resources/fish_types/frank.tres"),
+	preload("res://resources/fish_types/clown.tres"),
+	preload("res://resources/fish_types/werewolf.tres"),
+	preload("res://resources/fish_types/alien.tres"),
+	preload("res://resources/fish_types/watcher.tres"),
+	preload("res://resources/fish_types/guppy.tres"),
+]
 
 var array_index := 0
 
@@ -15,8 +29,8 @@ func _ready() -> void:
 
 
 func _update_entry() -> void:
-	dex_entry.update_entry(Spawner.fish_types[array_index])
-	label_index.text = "%s/%s" % [str(array_index + 1), Spawner.fish_types.size()]
+	dex_entry.update_entry(fish_types[array_index])
+	label_index.text = "%s/%s" % [str(array_index + 1), fish_types.size()]
 
 
 func _on_button_previous_pressed() -> void:
@@ -31,10 +45,10 @@ func _on_button_previous_pressed() -> void:
 
 
 func _on_button_next_pressed() -> void:
-	if array_index < Spawner.fish_types.size() - 1:
+	if array_index < fish_types.size() - 1:
 		array_index += 1
 
-		if array_index == Spawner.fish_types.size() - 1:
+		if array_index == fish_types.size() - 1:
 			button_next.hide()
 
 	button_previous.show()

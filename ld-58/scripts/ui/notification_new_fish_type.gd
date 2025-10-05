@@ -24,15 +24,7 @@ func _ready() -> void:
 
 func _set_fish_data() -> void:
 	label_name.text = data.identifier
-	var color := ""
-	match data.rarity:
-		0:color = "Green"
-		1:color = "Blue"
-		2:color = "Red"
-		3: color = "Purple"
-		4: color = "Orange"
-
-	label_rarity.text = "[color=%s]%s" % [color, FishType.RARITY.find_key(data.rarity)]
+	label_rarity.text = "[color=%s]%s" % [data.get_rarity_color_hex(data.rarity), FishType.RARITY.find_key(data.rarity)]
 	texture_rect.texture = data.sprite
 
 

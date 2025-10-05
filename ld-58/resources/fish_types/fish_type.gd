@@ -10,6 +10,7 @@ enum RARITY {
 	UPGRADE
 }
 
+
 @export var identifier := 'Goldfish' ## The type of fish
 @export var sprite : AtlasTexture
 @export var rarity : RARITY = RARITY.COMMON
@@ -37,3 +38,25 @@ func get_weight() -> float:
 
 func get_score() -> float:
 	return catch_base_value
+
+
+func get_rarity_color(rarity: int) -> Color:
+	var color := Color.WHITE
+	match rarity:
+		0:color = Color('#37946e')
+		1:color = Color('#5b6ee1')
+		2:color = Color('#ac3232')
+		3: color = Color('#76428a')
+		4: color = Color('#df7126')
+	return color
+
+
+func get_rarity_color_hex(rarity: int) -> String:
+	var color := ""
+	match rarity:
+		0:color = '#37946e'
+		1:color = '#5b6ee1'
+		2:color = '#ac3232'
+		3: color = '#76428a'
+		4: color = '#df7126'
+	return color

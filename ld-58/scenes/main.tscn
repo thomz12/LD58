@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgjyxgqyuigc1"]
+[gd_scene load_steps=11 format=3 uid="uid://bgjyxgqyuigc1"]
 
 [ext_resource type="PackedScene" uid="uid://cxdp0ygjeeag3" path="res://scenes/fishing/rod.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dlipgeh8lptfa" path="res://sprites/ground.png" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://crwijcqfixqcc" path="res://sprites/sludge.png" id="2_jyhfs"]
-[ext_resource type="Script" uid="uid://dnodao07emvn4" path="res://scripts/water.gd" id="3_tbgi4"]
+[ext_resource type="Script" path="res://scripts/water.gd" id="3_tbgi4"]
 [ext_resource type="Script" uid="uid://b3s6wfywbm56o" path="res://scripts/ui/hud.gd" id="6_tefeu"]
-[ext_resource type="Texture2D" uid="uid://pv23bqwqxy0d" path="res://sprites/altar.png" id="7_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://ccv86tyg237tx" path="res://scenes/fishing/altar.tscn" id="7_o6xl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(456, 20)
@@ -89,6 +88,8 @@ position = Vector2(0, 92)
 shape = SubResource("RectangleShape2D_tefeu")
 debug_color = Color(0.96581644, 0, 0.48731834, 0.41960785)
 
+[node name="Altar" parent="." instance=ExtResource("7_o6xl0")]
+
 [node name="Rod" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(207, -93)
 
@@ -102,14 +103,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_tefeu")
-
-[node name="Altar" type="Sprite2D" parent="."]
-position = Vector2(123, 174)
-texture = ExtResource("7_o6xl0")
-
-[node name="Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(45, 87)
-texture = ExtResource("8_tipki")
-region_enabled = true
-region_rect = Rect2(49, 33, 15, 15)

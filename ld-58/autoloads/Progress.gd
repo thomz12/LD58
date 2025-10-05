@@ -36,7 +36,7 @@ func is_new_fish_type(fish_type: FishType) -> bool:
 
 
 func _on_fish_caught(fish: Fish) -> void:
-	if is_new_fish_type(fish.data):
+	if is_new_fish_type(fish.data) or fish.data.rarity == FishType.RARITY.UPGRADE:
 		Events.notification_new_fish_type.emit(fish.data)
 
 	catch_history.append(fish.data)
