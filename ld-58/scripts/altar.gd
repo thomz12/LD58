@@ -6,6 +6,8 @@ func _ready() -> void:
 
 
 func _on_new_fish_type_caught(fish_type: FishType) -> void:
+	if fish_type.rarity == FishType.RARITY.UPGRADE: return
+
 	var node := find_child(fish_type.identifier) as Sprite2D
 
 	var tween := create_tween()

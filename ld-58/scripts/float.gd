@@ -74,22 +74,22 @@ func _physics_process(delta: float) -> void:
 					if fish.data.upgrade_num == 0:
 						crit_chance += 0.01
 						print("Increased crit chance! ", crit_chance)
-					
+
 					if fish.data.upgrade_num == 1:
 						wait_upgrades += 1
 						min_wait_time = min_wait_time_base / (1 + wait_upgrades * 0.1)
 						max_wait_time = max_wait_time_base / (1 + wait_upgrades * 0.1)
 						print("Wait upgrade! min: ", min_wait_time, " max: ", max_wait_time)
-					
+
 					if fish.data.upgrade_num == 2:
 						Spawner.increase_odds()
-					
+
 					if fish.data.upgrade_num == 3:
 						bonus_per_crit += 1
 						print("Bonus per crit: ", bonus_per_crit)
-						
-						
-					
+
+
+
 				play_audio(sfx_come_up)
 			else:
 				launch = true
