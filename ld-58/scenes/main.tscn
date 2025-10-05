@@ -92,7 +92,7 @@ debug_color = Color(0.96581644, 0, 0.48731834, 0.41960785)
 [node name="Altar" parent="." instance=ExtResource("7_o6xl0")]
 
 [node name="Rod" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(207, -93)
+position = Vector2(167, -16)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

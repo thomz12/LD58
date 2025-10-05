@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://clewgy0kst7gl"]
+[gd_scene load_steps=8 format=3 uid="uid://csbjnwl6yodhc"]
 
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_0kjv3"]
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_irhji"]
-[ext_resource type="Script" uid="uid://bnvri4b1wddjm" path="res://scripts/ui/start_menu.gd" id="2_m0hmm"]
+[ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="2_m0hmm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km2yg"]
 
@@ -61,8 +61,8 @@ size_flags_vertical = 3
 [node name="LabelTitle" type="Label" parent="VBoxContainer/Center"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "a game about 
-fish and ghosts"
+text = "Reely Scary
+Fishing Game"
 horizontal_alignment = 1
 
 [node name="Bottom" type="HBoxContainer" parent="VBoxContainer"]
