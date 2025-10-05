@@ -20,8 +20,8 @@ var fish_types : Array[FishType] = [
 ]
 
 var common = 50
-var uncommon = 20
-var rare = 5
+var uncommon = 10
+var rare = 2.5
 var legendary = 1
 var mythical = 0.1
 
@@ -30,7 +30,7 @@ var weights = PackedFloat32Array([
 	uncommon, uncommon, uncommon,
 	rare, rare,
 	legendary, legendary,
-	mythical, 0, 0, 0, 0
+	mythical, 10, 10, 10, 2
 ])
 
 var rng = RandomNumberGenerator.new()

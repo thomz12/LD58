@@ -29,6 +29,7 @@ enum RARITY {
 
 @export_group('Upgrade', 'upgrade_')
 @export var upgrade_description := "This does something"
+@export var upgrade_num = 0
 
 func get_length() -> float:
 	return base_length * base_length_modifier

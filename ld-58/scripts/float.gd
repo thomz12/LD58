@@ -53,6 +53,8 @@ func _physics_process(delta: float) -> void:
 					fish.launch_distance = global_position.distance_to(rod.global_position)
 					add_child(fish)
 					Events.fish_caught.emit(fish)
+					
+					if fish.data.identifier == ""
 
 				play_audio(sfx_come_up)
 			else:

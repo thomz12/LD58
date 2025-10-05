@@ -14,4 +14,6 @@ sprite = SubResource("AtlasTexture_qad5r")
 rarity = 5
 catch_base_value = 50
 base_weight = 0.5
+upgrade_description = "Fish bite faster!"
+upgrade_num = 1
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
