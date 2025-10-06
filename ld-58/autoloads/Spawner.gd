@@ -95,7 +95,7 @@ func increase_odds():
 
 func _get_fish_type(only_fish: bool, crit_upgrade: bool) -> FishType:
 	
-	var weights = [common, uncommon, rare, legendary, mythical, 0 if only_fish else normal_upgrade, 0 if only_fish or not crit_upgrade else special_upgrade]
+	var weights = [common, uncommon, rare, legendary, mythical if Progress.has_all_but_guppy else 0, 0 if only_fish else normal_upgrade, 0 if only_fish or not crit_upgrade else special_upgrade]
 	var type = rng.rand_weighted(weights)
 	
 	match type:

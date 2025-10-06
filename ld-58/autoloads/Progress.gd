@@ -4,6 +4,7 @@ var fish_scene := load("res://scenes/fishing/float_fish.tscn")
 
 var catch_history : Array[FishType] = []
 
+var has_all_but_guppy = false
 
 func _ready() -> void:
 	Events.fish_caught.connect(_on_fish_caught)
@@ -44,7 +45,14 @@ func _on_fish_caught(fish: Fish) -> void:
 
 	catch_history.append(fish.data)
 
+	var count = get_unique_count()
+
 	## Has every type been caught?
-	if 12 == get_unique_count():
+	if 12 == count:
 		print('caught every fish. Game Over!')
 		Events.game_won.emit()
+		
+	if 11 == count:
+		print("One more!!")
+		has_all_but_guppy = true
+		
