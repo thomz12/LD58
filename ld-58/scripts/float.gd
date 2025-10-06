@@ -30,7 +30,7 @@ var hooked_total_time = 0.0
 var launch = false
 
 # upgradables
-var crit_chance = 0.01
+var crit_chance = 0.05
 var bonus_per_crit = 1
 
 var wait_upgrades = 0
@@ -40,6 +40,7 @@ var min_wait_time = min_wait_time_base
 var max_wait_time = max_wait_time_base
 
 var fish_caught = 0
+var got_crit = false
 
 func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
@@ -65,9 +66,10 @@ func _physics_process(delta: float) -> void:
 				if randf() < crit_chance:
 					total_fish += bonus_per_crit
 					crit_audio.play()
+					got_crit = true
 
 				for i in range(total_fish):
-					var fish = Spawner.get_fish(total_fish != 1 || fish_caught < 5) # Only get fish if crit or first 5 catches, if 1 allow upgrades.
+					var fish = Spawner.get_fish(total_fish != 1 || fish_caught < 5, got_crit) # Only get fish if crit or first 5 catches, if 1 allow upgrades.
 					fish.launch_vector = global_position.direction_to(rod.global_position)
 					fish.launch_distance = global_position.distance_to(rod.global_position)
 					add_child(fish)

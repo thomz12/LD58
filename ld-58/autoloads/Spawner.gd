@@ -43,7 +43,7 @@ var rare_start = 2.5
 var legendary_start = 0.1
 var mythical_start = 0.01
 var normal_upgrade_start = 30.0
-var special_upgrade_start = 1.0
+var special_upgrade_start = 3.0
 
 var common_end = 30.0
 var uncommon_end = 15.0
@@ -51,7 +51,7 @@ var rare_end = 5.0
 var legendary_end = 2.5
 var mythical_end = 1.0
 var normal_upgrade_end = 20.0
-var special_upgrade_end = 1.0
+var special_upgrade_end = 3.0
 
 var common = common_start
 var uncommon = uncommon_start
@@ -67,9 +67,9 @@ var rng = RandomNumberGenerator.new()
 
 var fish_scene := preload("res://scenes/fishing/float_fish.tscn")
 
-func get_fish(only_fish = false) -> Fish:
+func get_fish(only_fish = false, crit_upgrade = true) -> Fish:
 	var new_fish := fish_scene.instantiate() as Fish
-	new_fish.data = _get_fish_type(only_fish)
+	new_fish.data = _get_fish_type(only_fish, crit_upgrade)
 	return new_fish
 
 func increase_odds():
@@ -93,9 +93,9 @@ func increase_odds():
 	print("special_upgrade: ", special_upgrade);
 	
 
-func _get_fish_type(only_fish = false) -> FishType:
+func _get_fish_type(only_fish: bool, crit_upgrade: bool) -> FishType:
 	
-	var weights = [common, uncommon, rare, legendary, mythical, 0 if only_fish else normal_upgrade, 0 if only_fish else special_upgrade]
+	var weights = [common, uncommon, rare, legendary, mythical, 0 if only_fish else normal_upgrade, 0 if only_fish or not crit_upgrade else special_upgrade]
 	var type = rng.rand_weighted(weights)
 	
 	match type:
@@ -110,7 +110,10 @@ func _get_fish_type(only_fish = false) -> FishType:
 		4:
 			return mythical_fish.pick_random()
 		5:
-			return normal_upgrades.pick_random()
+			if crit_upgrade:
+				return normal_upgrades.pick_random()
+			else:
+				return normal_upgrades[randi_range(1, 2)]
 		6:
 			return special_upgrades.pick_random()
 		
