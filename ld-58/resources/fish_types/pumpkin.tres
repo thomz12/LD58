@@ -12,4 +12,5 @@ script = ExtResource("1_tonoc")
 identifier = "Pumpkin Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 rarity = 1
+flavour_text = "squash your fear"
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

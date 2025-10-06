@@ -12,4 +12,5 @@ script = ExtResource("1_o7esb")
 identifier = "Werewolf Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 rarity = 2
+flavour_text = "half fish, half wolf"
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

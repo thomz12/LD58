@@ -14,6 +14,7 @@ enum RARITY {
 @export var identifier := 'Goldfish' ## The type of fish
 @export var sprite : AtlasTexture
 @export var rarity : RARITY = RARITY.COMMON
+@export var flavour_text := "flavour"
 
 @export_group('Catching', 'catch_')
 @export var catch_base_value := 100

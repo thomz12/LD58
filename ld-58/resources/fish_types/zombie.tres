@@ -11,4 +11,5 @@ region = Rect2(0, 0, 16, 16)
 script = ExtResource("1_q6s42")
 identifier = "Zombie Fish"
 sprite = SubResource("AtlasTexture_bubjg")
+flavour_text = "biting brains"
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

@@ -12,6 +12,7 @@ script = ExtResource("1_hari4")
 identifier = "Extraterrestrial Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 rarity = 3
+flavour_text = "not from here"
 catch_base_value = 50
 base_weight = 0.5
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
