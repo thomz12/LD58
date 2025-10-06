@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 
 
 func _on_new_fish_type_caught(data: FishType) -> void:
-	if label_start_info.visible:
+	if label_start_info.visible and data.rarity != FishType.RARITY.UPGRADE:
 		## Hide the label when the first fish is caught
 		label_start_info.text = "[wave amp=30.0 freq=-2.0 connected=1][pulse freq=1.0]...%s...[/pulse][/wave]" % data.flavour_text
 		label_start_info.modulate = Color.WHITE
