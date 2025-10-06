@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 					fish_caught += 1
 
 					if fish.data.upgrade_num == 0:
-						crit_chance += 0.01
+						crit_chance += 0.02
 						print("Increased crit chance! ", crit_chance)
 
 					if fish.data.upgrade_num == 1:
