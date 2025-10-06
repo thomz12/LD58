@@ -11,7 +11,7 @@ func _on_new_fish_type_caught(fish_type: FishType) -> void:
 	var node := find_child(fish_type.identifier) as Sprite2D
 
 	var tween := create_tween()
-	tween.tween_property(node, 'modulate', Color.WHITE, .2)
+	tween.tween_property(node, 'self_modulate', Color.WHITE, .2)
 
 	var altar_tween := create_tween()
 	altar_tween.tween_property($SpriteAltar, 'modulate', fish_type.get_rarity_color(fish_type.rarity), .2)
