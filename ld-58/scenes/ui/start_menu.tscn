@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://csbjnwl6yodhc"]
+[gd_scene load_steps=10 format=3 uid="uid://csbjnwl6yodhc"]
 
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="1_0kjv3"]
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_irhji"]
 [ext_resource type="Script" uid="uid://bnvri4b1wddjm" path="res://scripts/ui/start_menu.gd" id="2_m0hmm"]
+[ext_resource type="Texture2D" uid="uid://mi25phg24l6r" path="res://sprites/logo.png" id="4_km2yg"]
+[ext_resource type="Script" uid="uid://bval3pbvxqn5p" path="res://scripts/logo.gd" id="5_s1kfm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km2yg"]
 
@@ -59,6 +61,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="LabelTitle" type="Label" parent="VBoxContainer/Center"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Reely Scary
@@ -82,5 +85,11 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_x0g8l")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i11hm")
 text = "Play game"
 flat = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(160, 83)
+scale = Vector2(2, 2)
+texture = ExtResource("4_km2yg")
+script = ExtResource("5_s1kfm")
 
 [connection signal="pressed" from="VBoxContainer/Bottom/ButtonStart" to="." method="_on_button_start_pressed"]
