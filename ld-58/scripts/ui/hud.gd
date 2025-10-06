@@ -1,6 +1,8 @@
 extends Control
 class_name HUD
 
+@onready var label_start_info: RichTextLabel = %LabelStartInfo
+
 var notification_won_scene := load("res://scenes/ui/notifications/notification_game_won.tscn")
 var notification_fish_scene := load("res://scenes/ui/notifications/notification_new_fish_type.tscn")
 
@@ -15,7 +17,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not game_over: game_time += delta
 
+
 func _on_new_fish_type_caught(data: FishType) -> void:
+	if label_start_info.visible:
+		## Hide the label when the first fish is caught
+		var tween := create_tween()
+		tween.tween_property(label_start_info, 'modulate:a', 0, 1.0)
+
 	var new_notification = notification_fish_scene.instantiate() as NotificationNewFishType
 	new_notification.data = data
 	add_child(new_notification)
