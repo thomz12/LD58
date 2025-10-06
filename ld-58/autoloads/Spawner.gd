@@ -37,12 +37,12 @@ var special_upgrades : Array[FishType] = [
 	preload("res://resources/fish_types/upgrade3.tres"),
 ]
 
-var common_start = 40.0
+var common_start = 20.0
 var uncommon_start = 10.0
 var rare_start = 2.5
 var legendary_start = 0.1
 var mythical_start = 0.1
-var normal_upgrade_start = 30.0
+var normal_upgrade_start = 10.0
 var special_upgrade_start = 3.0
 
 var common_end = 10.0
