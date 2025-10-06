@@ -45,8 +45,8 @@ var mythical_start = 0.1
 var normal_upgrade_start = 30.0
 var special_upgrade_start = 3.0
 
-var common_end = 15.0
-var uncommon_end = 10.0
+var common_end = 10.0
+var uncommon_end = 7.5
 var rare_end = 5.0
 var legendary_end = 2.5
 var mythical_end = 1.0
