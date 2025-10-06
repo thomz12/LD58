@@ -12,6 +12,7 @@ script = ExtResource("1_4hivt")
 identifier = "Killer Guppy"
 sprite = SubResource("AtlasTexture_bubjg")
 rarity = 4
+flavour_text = "this is the end"
 catch_base_value = 200
 catch_range = Vector2(20, 40)
 base_length = 5.0

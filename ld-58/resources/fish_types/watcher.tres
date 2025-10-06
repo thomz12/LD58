@@ -12,4 +12,5 @@ script = ExtResource("1_taepq")
 identifier = "Watcher Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 rarity = 3
+flavour_text = "i see everything"
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

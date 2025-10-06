@@ -12,4 +12,5 @@ script = ExtResource("1_di6ln")
 identifier = "Franken Fish"
 sprite = SubResource("AtlasTexture_bubjg")
 rarity = 1
+flavour_text = "it's alive(?)"
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"

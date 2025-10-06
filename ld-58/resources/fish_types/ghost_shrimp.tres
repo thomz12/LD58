@@ -11,6 +11,7 @@ region = Rect2(16, 16, 16, 16)
 script = ExtResource("1_aemhg")
 identifier = "Ghost Shrimp"
 sprite = SubResource("AtlasTexture_bubjg")
+flavour_text = "tiny and spooky"
 catch_base_value = 200
 catch_range = Vector2(20, 40)
 base_length = 5.0

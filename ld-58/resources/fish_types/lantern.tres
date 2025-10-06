@@ -11,4 +11,5 @@ region = Rect2(48, 16, 16, 16)
 script = ExtResource("1_28dai")
 identifier = "Lantern Fish"
 sprite = SubResource("AtlasTexture_bubjg")
+flavour_text = "lured you in"
 metadata/_custom_type_script = "uid://cmdbr2lwmuv8g"
