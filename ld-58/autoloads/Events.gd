@@ -17,3 +17,7 @@ signal float_return()
 signal game_won
 @warning_ignore("unused_signal")
 signal notification_new_fish_type(data: FishType)
+
+
+signal ui_dislay_fish_stat(fish: String, node: Node2D)
+signal ui_stop_display_fish_stat

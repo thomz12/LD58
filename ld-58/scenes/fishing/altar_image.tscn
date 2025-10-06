@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://gk2w7vuc3jwn"]
+
+[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="1_8nf85"]
+[ext_resource type="Script" uid="uid://buyweuwcjy413" path="res://scripts/altar_image.gd" id="2_rppk6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyprv"]
+size = Vector2(14, 12)
+
+[node name="Killer Guppy" type="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_8nf85")
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)
+script = ExtResource("2_rppk6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dyprv")
+debug_color = Color(2.5990605e-06, 0.59164864, 0.7475077, 0.41960785)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://tpalihg8m60k" path="res://scripts/altar.gd" id="1_dyprv"]
 [ext_resource type="Texture2D" uid="uid://pv23bqwqxy0d" path="res://sprites/altar.png" id="1_wa3s2"]
-[ext_resource type="Texture2D" uid="uid://dhdsse3kfqmvy" path="res://sprites/fish.png" id="2_dyprv"]
+[ext_resource type="PackedScene" uid="uid://gk2w7vuc3jwn" path="res://scenes/fishing/altar_image.tscn" id="3_5o4pm"]
 
 [node name="Altar" type="Node2D"]
 script = ExtResource("1_dyprv")
@@ -11,86 +11,49 @@ script = ExtResource("1_dyprv")
 position = Vector2(123, 174)
 texture = ExtResource("1_wa3s2")
 
-[node name="Killer Guppy" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="Killer Guppy" parent="." instance=ExtResource("3_5o4pm")]
 position = Vector2(44, 86)
-texture = ExtResource("2_dyprv")
-region_enabled = true
-region_rect = Rect2(48, 32, 16, 16)
 
-[node name="Watcher Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(35, 103)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Watcher Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(35, 102)
 region_rect = Rect2(16, 32, 16, 16)
 
-[node name="Extraterrestrial Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="Extraterrestrial Fish" parent="." instance=ExtResource("3_5o4pm")]
 position = Vector2(51, 102)
-texture = ExtResource("2_dyprv")
-region_enabled = true
 region_rect = Rect2(0, 32, 16, 16)
 
-[node name="Clown Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(34, 118)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Clown Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(33, 117)
 region_rect = Rect2(48, 0, 16, 16)
 
-[node name="Werewolf Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(50, 118)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Werewolf Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(50, 117)
 region_rect = Rect2(32, 32, 16, 16)
 
-[node name="Bone Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(26, 134)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Bone Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(25, 133)
 region_rect = Rect2(32, 0, 16, 16)
 
-[node name="Pumpkin Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(42, 134)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Pumpkin Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(41, 132)
 region_rect = Rect2(0, 16, 16, 16)
 
-[node name="Franken Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="Franken Fish" parent="." instance=ExtResource("3_5o4pm")]
 position = Vector2(58, 133)
-texture = ExtResource("2_dyprv")
-region_enabled = true
 region_rect = Rect2(32, 16, 16, 16)
 
-[node name="Ghost Shrimp" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="Ghost Shrimp" parent="." instance=ExtResource("3_5o4pm")]
 position = Vector2(18, 150)
-texture = ExtResource("2_dyprv")
-region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Mummy Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(36, 150)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Mummy Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(35, 149)
 region_rect = Rect2(16, 0, 16, 16)
 
-[node name="Zombie Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(52, 149)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Zombie Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(51, 149)
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Lantern Fish" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(67, 149)
-texture = ExtResource("2_dyprv")
-region_enabled = true
+[node name="Lantern Fish" parent="." instance=ExtResource("3_5o4pm")]
+position = Vector2(68, 149)
 region_rect = Rect2(48, 16, 16, 16)

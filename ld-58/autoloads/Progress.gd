@@ -19,6 +19,15 @@ func get_catch_count(fish_type: FishType) -> int:
 	return count
 
 
+func get_catch_count_by_identifier(fish_type: String) -> int:
+	var count := 0
+	for catch in catch_history:
+		if catch.identifier == fish_type:
+			count += 1
+
+	return count
+
+
 func is_new_fish_type(fish_type: FishType) -> bool:
 	var is_new := true
 
@@ -51,8 +60,7 @@ func _on_fish_caught(fish: Fish) -> void:
 	if 12 == count:
 		print('caught every fish. Game Over!')
 		Events.game_won.emit()
-		
+
 	if 11 == count:
 		print("One more!!")
 		has_all_but_guppy = true
-		
