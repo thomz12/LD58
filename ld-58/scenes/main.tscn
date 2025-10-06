@@ -110,6 +110,7 @@ script = ExtResource("6_tefeu")
 
 [node name="LabelStartInfo" type="RichTextLabel" parent="CanvasLayer/HUD"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 0
 offset_top = 56.0
 offset_right = 320.0
