@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://p7m4838pb33s" path="res://sprites/background.png" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dlipgeh8lptfa" path="res://sprites/ground.png" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://crwijcqfixqcc" path="res://sprites/sludge.png" id="2_jyhfs"]
-[ext_resource type="Script" path="res://scripts/water.gd" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://dnodao07emvn4" path="res://scripts/water.gd" id="3_tbgi4"]
 [ext_resource type="Script" uid="uid://b3s6wfywbm56o" path="res://scripts/ui/hud.gd" id="6_tefeu"]
 [ext_resource type="Theme" uid="uid://bwgtcoet55w6c" path="res://scenes/ui/ui_theme.tres" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://ccv86tyg237tx" path="res://scenes/fishing/altar.tscn" id="7_o6xl0"]

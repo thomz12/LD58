@@ -40,9 +40,9 @@ var special_upgrades : Array[FishType] = [
 var common_start = 20.0
 var uncommon_start = 10.0
 var rare_start = 2.5
-var legendary_start = 0.1
-var mythical_start = 0.1
-var normal_upgrade_start = 10.0
+var legendary_start = 1.0
+var mythical_start = 0.5
+var normal_upgrade_start = 15.0
 var special_upgrade_start = 3.0
 
 var common_end = 10.0
@@ -74,7 +74,7 @@ func get_fish(only_fish = false, crit_upgrade = true) -> Fish:
 
 func increase_odds():
 	level += 1
-	var t = 1.0 - exp(-level * 0.05)
+	var t = 1.0 - exp(-level * 0.15)
 	common = lerp(common_start, common_end, t)
 	uncommon = lerp(uncommon_start, uncommon_end, t)
 	rare = lerp(rare_start, rare_end, t)
@@ -83,14 +83,16 @@ func increase_odds():
 	normal_upgrade = lerp(normal_upgrade_start, normal_upgrade_end, t)
 	special_upgrade = lerp(special_upgrade_start, special_upgrade_end, t)
 	
+	var total = common + uncommon + rare + legendary + mythical + normal_upgrade + special_upgrade
+	
 	print("Level: ", level, " odds:")
-	print("common: ", common);
-	print("uncommon: ", uncommon);
-	print("rare: ", rare);
-	print("legendary: ", legendary);
-	print("mythical: ", mythical);
-	print("normal_upgrade: ", normal_upgrade);
-	print("special_upgrade: ", special_upgrade);
+	print("common: ", common, ", ", common / total * 100, "%");
+	print("uncommon: ", uncommon, ", ", uncommon / total * 100, "%");
+	print("rare: ", rare, ", ", rare / total * 100, "%");
+	print("legendary: ", legendary, ", ", legendary / total * 100, "%");
+	print("mythical: ", mythical, ", ", mythical / total * 100, "%");
+	print("normal_upgrade: ", normal_upgrade, ", ", normal_upgrade / total * 100, "%");
+	print("special_upgrade: ", special_upgrade, ", ", special_upgrade / total * 100, "%");
 	
 
 func _get_fish_type(only_fish: bool, crit_upgrade: bool) -> FishType:
