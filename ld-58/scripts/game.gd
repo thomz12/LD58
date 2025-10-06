@@ -1,9 +1,14 @@
 extends Node2D
 
 @onready var pause_menu: Control = %PauseMenu
+@onready var label_time: Label = %LabelTime
+
 @onready var start_menu: Control = %StartMenu
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var transition_color_rect: ColorRect = %TransitionColorRect
+
+@onready var hud: HUD = $Main/CanvasLayer/HUD
+
 
 var is_loading := false
 
@@ -14,6 +19,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = !get_tree().paused
 		pause_menu.visible = get_tree().paused
+		var time_elapsed = hud.game_time
+
+		var minutes = time_elapsed / 60
+		var seconds = fmod(time_elapsed, 60)
+
+		label_time.text = "%02d:%02d" % [minutes, seconds]
 
 
 func _on_start_menu_game_start() -> void:

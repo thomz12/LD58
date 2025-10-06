@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_dyprv")
 debug_color = Color(2.5990605e-06, 0.59164864, 0.7475077, 0.41960785)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 z_index = 100
 z_as_relative = false
 custom_minimum_size = Vector2(128, 0)
