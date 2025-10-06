@@ -21,17 +21,16 @@ shape = SubResource("RectangleShape2D_dyprv")
 debug_color = Color(2.5990605e-06, 0.59164864, 0.7475077, 0.41960785)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
 z_index = 100
 z_as_relative = false
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(128, 0)
 offset_left = 10.0
 offset_top = -9.0
 offset_right = 74.0
 offset_bottom = 31.0
 theme = ExtResource("3_jbkvj")
 bbcode_enabled = true
-text = "[bgcolor=BLACK]caught: 4"
+text = "[bgcolor=BLACK]caught: 00000"
 fit_content = true
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

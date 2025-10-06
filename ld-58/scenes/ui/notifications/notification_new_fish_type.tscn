@@ -37,7 +37,7 @@ script = ExtResource("2_rop7t")
 stream = ExtResource("3_mt56a")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(144, 0)
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_niefe")
